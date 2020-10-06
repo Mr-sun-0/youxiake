@@ -1,0 +1,9 @@
+.my-swipe .van-swipe-item 
+    height 200px
+.van-swipe__indicator
+    width 0.76rem
+    height 0.10rem
+    border-radius 3px
+.van-nav-bar .van-icon {
+    color: #333333;
+}
