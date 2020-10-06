@@ -12,6 +12,7 @@
   .nav-wrap{
     display: flex;
     justify-content: space-around;
+    margin: 10px 0;
     section{
         width: 70px;
         height: 20px;
