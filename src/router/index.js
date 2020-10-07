@@ -3,10 +3,25 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-const routes = [];
+const routes = [{
+        path: '/',
+        component: () =>
+            import ('../views/Index.vue'),
+    },
+    {
+        path: '/mine',
+        component: () =>
+            import ('../views/Mine.vue'),
+    },
+    {
+        path:'/hangzhou',
+        component:()=>
+            import('../views/Hangzhou.vue')
+    }
+];
 
 const router = new VueRouter({
-  routes,
+    routes,
 });
 
 export default router;
