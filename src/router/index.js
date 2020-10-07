@@ -6,12 +6,17 @@ Vue.use(VueRouter);
 const routes = [{
         path: '/',
         component: () =>
-            import ('../views/Index.vue'),
+        import ('../views/Index.vue'),
     },
     {
         path: '/mine',
         component: () =>
-            import ('../views/Mine.vue'),
+        import ('../views/Mine.vue'),
+    },
+    {
+        path: '/meet',
+        component: () =>
+        import ('../views/Meet.vue'),
     }
 ];
 
