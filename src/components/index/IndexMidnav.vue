@@ -22,6 +22,8 @@ export default {
       display: flex;
       justify-content: space-around;
       font-size: 12px;
+      background: #fff;
+      padding: 20px 0;
       section{
         display: flex;
         flex-direction: column;

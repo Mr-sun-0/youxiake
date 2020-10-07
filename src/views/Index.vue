@@ -1,13 +1,13 @@
 <template>
-    <div>
+    <div class="index-wrap">
       <header>
         <index-header />
         <index-nav />
         <index-banner />
-        <index-midnav />
-        <index-function />
-        <index-recommend />
       </header>
+      <index-midnav />
+      <index-function />
+      <index-recommend />
     </div>
 </template>
 
@@ -32,8 +32,12 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  header{
+  .index-wrap{
+    background:#ddd;
+    margin-bottom: 50px;
+     header{
     height: 233px;
     background: linear-gradient(to bottom, #fedb39 90%,white 10%);
+  }
   }
 </style>
