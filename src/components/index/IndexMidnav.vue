@@ -1,7 +1,7 @@
 <template>
     <div class='midnav-wrap'>
        <section v-for="(view,index) in midnav" :key="index">
-           <img :src="view.url">
+           <img :src=view.url>
            {{view.text}}
         </section>
     </div>

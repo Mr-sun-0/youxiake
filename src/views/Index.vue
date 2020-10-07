@@ -6,6 +6,7 @@
         <index-banner />
         <index-midnav />
         <index-function />
+        <index-recommend />
       </header>
     </div>
 </template>
@@ -16,6 +17,7 @@ import IndexNav from '@/components/index/IndexNav.vue';
 import IndexBanner from '@/components/index/IndexBanner.vue';
 import IndexMidnav from '@/components/index/IndexMidnav.vue';
 import IndexFunction from '@/components/index/IndexFunction.vue';
+import IndexRecommend from '@/components/index/IndexRecommend.vue';
 
 export default {
   components: {
@@ -24,6 +26,7 @@ export default {
     IndexBanner,
     IndexMidnav,
     IndexFunction,
+    IndexRecommend,
   },
 };
 </script>

@@ -9,6 +9,30 @@
            <p>摄影游</p>
            <p>记录美景</p>
         </van-grid-item>
+        <van-grid-item>
+           <p>户外游</p>
+           <p>勇攀高峰</p>
+        </van-grid-item>
+        <van-grid-item>
+           <p>瑜伽行</p>
+           <p>无处不瑜伽</p>
+        </van-grid-item>
+        <van-grid-item>
+           <p>小车团</p>
+           <p>醇享体验</p>
+        </van-grid-item>
+        <van-grid-item>
+           <p>探索星球</p>
+           <p>全球踩线</p>
+        </van-grid-item>
+        <van-grid-item>
+           <p>活动赛事</p>
+           <p>炫酷运动</p>
+        </van-grid-item>
+        <van-grid-item>
+           <p>游侠集市</p>
+           <p>旅行必备</p>
+        </van-grid-item>
       </van-grid>
     </div>
 </template>

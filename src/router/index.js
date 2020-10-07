@@ -6,7 +6,15 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
+    redirect: '/index',
+  },
+  {
+    path: '/index',
     component: () => import('../views/Index.vue'),
+  },
+  {
+    path: '/mine',
+    component: () => import('../views/Mine.vue'),
   },
 ];
 
