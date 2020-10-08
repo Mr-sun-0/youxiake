@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
+<<<<<<< HEAD
 const routes = [
   {
     path: '/',
@@ -16,6 +17,23 @@ const routes = [
     path: '/mine',
     component: () => import('../views/Mine.vue'),
   },
+=======
+const routes = [{
+        path: '/',
+        component: () =>
+            import ('../views/Index.vue'),
+    },
+    {
+        path: '/mine',
+        component: () =>
+            import ('../views/Mine.vue'),
+    },
+    {
+        path:'/hangzhou',
+        component:()=>
+            import('../views/Hangzhou.vue')
+    }
+>>>>>>> nibaoshi
 ];
 
 const router = new VueRouter({

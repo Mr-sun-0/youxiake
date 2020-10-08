@@ -1,6 +1,15 @@
 import {
+<<<<<<< HEAD
   Search, Lazyload, Swipe, SwipeItem, Grid, GridItem, Image as VanImage, Icon, Tabbar,
   TabbarItem, Tab, Tabs,
+=======
+  Search,
+  Lazyload,
+  Swipe,
+  SwipeItem,
+  Image as VanImage,
+  Icon,
+>>>>>>> nibaoshi
 } from 'vant';
 import Vue from 'vue';
 import router from './router';
