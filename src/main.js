@@ -5,6 +5,8 @@ import {
   SwipeItem,
   Image as VanImage,
   Icon,
+  Tab,
+  Tabs,
 } from 'vant';
 import Vue from 'vue';
 import router from './router';
@@ -23,6 +25,8 @@ Vue.use(Search);
 Vue.use(Lazyload);
 Vue.use(Swipe);
 Vue.use(SwipeItem);
+Vue.use(Tab);
+Vue.use(Tabs);
 
 new Vue({
   router,
