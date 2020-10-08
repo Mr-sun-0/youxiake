@@ -17,6 +17,7 @@ const routes = [
     path: '/mine',
     component: () => import('../views/Mine.vue'),
   },
+<<<<<<< HEAD
 =======
 const routes = [{
         path: '/',
@@ -34,6 +35,12 @@ const routes = [{
             import('../views/Hangzhou.vue')
     }
 >>>>>>> nibaoshi
+=======
+  {
+    path: '*',
+    component: () => import('../views/404.vue'),
+  },
+>>>>>>> gaotian
 ];
 
 const router = new VueRouter({
