@@ -295,7 +295,6 @@ export default {
       }
       .menu {
       display: flex;
-    //   justify-content: space-around;
       flex-wrap: wrap;
       margin-top: 20px;
       li {

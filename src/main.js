@@ -1,6 +1,20 @@
 import {
-  Search, Lazyload, Swipe, SwipeItem, Grid, GridItem, Image as VanImage, Icon, Tabbar,
-  TabbarItem, Tab, Tabs,
+  Search,
+  Lazyload,
+  Swipe,
+  SwipeItem,
+  Grid,
+  GridItem,
+  Image as VanImage,
+  Icon,
+  Tabbar,
+  TabbarItem,
+  Tab,
+  Tabs,
+  Field,
+  Button,
+  NavBar,
+
 } from 'vant';
 import Vue from 'vue';
 import router from './router';
@@ -13,6 +27,8 @@ import './assets/css/reset.less';
 
 Vue.config.productionTip = false;
 
+Vue.use(Button);
+Vue.use(Field);
 Vue.use(Icon);
 Vue.use(VanImage);
 Vue.use(Search);
@@ -25,6 +41,7 @@ Vue.use(Tabbar);
 Vue.use(TabbarItem);
 Vue.use(Tab);
 Vue.use(Tabs);
+Vue.use(NavBar);
 
 new Vue({
   router,
