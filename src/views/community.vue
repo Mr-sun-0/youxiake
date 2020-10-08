@@ -5,8 +5,8 @@
     </div>
 </template>
 <script>
-import HangHeader from '../components/hangzhou/HangHeader.vue';
-import HangMid from '../components/hangzhou/HangMid.vue';
+import HangHeader from '../components/community/CommHeader.vue';
+import HangMid from '../components/community/CommMid.vue';
 
 export default {
   components: {
