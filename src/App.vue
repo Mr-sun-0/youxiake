@@ -1,33 +1,19 @@
 <template>
   <div id="app">
     <router-view/>
-<<<<<<< HEAD
-      <app-bottom />
-=======
-
->>>>>>> nibaoshi
+    <app-bottom />
   </div>
 </template>
-<script>
 
-export default {
-
-<<<<<<< HEAD
 <script>
 import AppBottom from '@/components/public/AppBottom.vue';
-
 export default {
   components: {
     AppBottom,
   },
 };
-
 </script>
 
-=======
-};
-</script>
->>>>>>> nibaoshi
 <style lang="less">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
