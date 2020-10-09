@@ -1,17 +1,24 @@
 <template>
     <div>
-        <hang-header/>
-        <hang-mid/>
+        <comm-header/>
+        <comm-mid/>
+        <comm-fiv/>
+    <comm-cepic/>
+     <comm-fiv/>
     </div>
 </template>
 <script>
-import HangHeader from '../components/community/CommHeader.vue';
-import HangMid from '../components/community/CommMid.vue';
+import CommHeader from '../components/community/CommHeader.vue';
+import CommMid from '../components/community/CommMid.vue';
+import CommFiv from '../components/community/CommFivepic.vue';
+import CommCepic from '../components/community/Commcepic.vue';
 
 export default {
   components: {
-    HangHeader,
-    HangMid,
+    CommHeader,
+    CommMid,
+    CommFiv,
+    CommCepic,
   },
 };
 </script>

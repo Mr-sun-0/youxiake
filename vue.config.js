@@ -7,10 +7,10 @@ module.exports = {
         changeOrigin: true,
       },
     },
-    overlay: {
-      warnings: false,
-      errors: false,
-    },
+    // overlay: {
+    //   warnings: false,
+    //   errors: false,
+    // },
   },
-  lintOnSave: false,
+  // lintOnSave: false,
 };
