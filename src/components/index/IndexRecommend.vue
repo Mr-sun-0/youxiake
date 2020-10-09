@@ -5,7 +5,8 @@
             <div @click="active=1" :class="{myClass:active==1}">当地玩乐</div>
         </section>
         <van-tabs type='line' border='true'>
-        <van-tab v-for="(item,index) in $state.aroundLump.weekList" :key='index'  :title="item.title">
+        <van-tab v-for="(item,index) in $store.state.dataList.aroundLump.weekList"
+        :key='index'  :title="item.title">
            <van-grid :column-num="3">
             <van-grid-item v-for="(value,num) in item.productList"
             :key="num" >

@@ -1,7 +1,7 @@
 const mutations = {
-  getIndexList(state,payload){
-      state.dataList = payload;
-  }
-}
+  getIndexList(state, payload) {
+    state.dataList = payload;
+  },
+};
 
 export default mutations;

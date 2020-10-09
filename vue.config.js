@@ -8,10 +8,10 @@ module.exports = {
       },
     },
     // 关闭eslint
-    // overlay: {
-    //   warnings: false,
-    //   errors: false,
-    // }
+    overlay: {
+      warnings: false,
+      errors: true,
+    },
   },
-  // lintOnSave: false
+  lintOnSave: true,
 };

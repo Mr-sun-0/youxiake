@@ -1,5 +1,5 @@
 const state = {
-    dataList = [],
-}
+  dataList: [],
+};
 
 export default state;
