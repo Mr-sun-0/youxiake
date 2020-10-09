@@ -5,15 +5,20 @@
             <div @click="active=1" :class="{myClass:active==1}">当地玩乐</div>
         </section>
         <van-tabs type='line' border='true'>
-        <van-tab v-for="(item,index) in $store.state.dataList.aroundLump.weekList"
+        <van-tab  v-for="(item,index) in $store.state.weekList"
         :key='index'  :title="item.title">
-           <van-grid :column-num="3">
-            <van-grid-item v-for="(value,num) in item.productList"
-            :key="num" >
-             <van-image :src="value.image" />
-             <p>{{value.simpleName}}</p>
-             </van-grid-item>
-            </van-grid>
+            <van-swipe class="my-swipe" indicator-color="orange" loop=false>
+              <van-swipe-item v-for="(item1,index1) in Math.ceil(item.productList.length/6)"
+              :key="index1">
+                <van-grid :column-num="3" >
+                <van-grid-item  v-for="(value,num) in item.productList.slice(index1*6,6*index1+6)"
+                :key="num" >
+                <van-image  :src="value.image" />
+                <p>{{value.simpleName}}</p>
+                </van-grid-item>
+                </van-grid>
+              </van-swipe-item>
+            </van-swipe>
         </van-tab>
         </van-tabs>
     </div>
@@ -30,7 +35,7 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
     .recommend-wrap{
         margin-top:20px;
         section{
@@ -47,6 +52,18 @@ export default {
         .myClass{
             background: #fff;
         }
+    }
+
+    .van-swipe{
+        .van-swipe__indicator--active{
+            width: 20px;
+        }
+        .van-grid-item__content{
+        font-size: 15px;
+        .van-image{
+         height: 80px;
+     }
+    }
     }
     }
 </style>
