@@ -28,6 +28,7 @@ import 'amfe-flexible';
 
 // 引入reset文件
 import './assets/css/reset.less';
+import './assets/css/cities.css';
 
 Vue.config.productionTip = false;
 Vue.use(List);

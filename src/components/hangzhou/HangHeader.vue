@@ -5,8 +5,8 @@
                 <span><img src="../../assets/images/hangzhou/collect.png" alt=""></span>
                 <span><img src="../../assets/images/hangzhou/share.png" alt=""></span>
             </div>
-            <div class="header-place">
-                <p>杭州</p>
+            <div class="header-place" @click="changeCity">
+                <p>{{city}}</p>
                 <span>切换∨</span>
             </div>
             <div class="weather">
@@ -21,16 +21,18 @@
 export default {
   data() {
     return {
-
+      city: '杭州',
     };
   },
   computed: {
-
+    // city() {
+    //   return this.state.city.name;
+    // },
   },
   methods: {
-    //  changeCity(){
-    //     this.$router.push('/cities')
-    // }
+    changeCity() {
+      this.$router.push('/cities');
+    },
   },
 };
 </script>

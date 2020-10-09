@@ -185,9 +185,12 @@ export default {
     toMessage() {
       this.$router.push('/message');
     },
+<<<<<<< HEAD
     toPerson(){
       this.$router.push('/person');
     }
+=======
+>>>>>>> master
   },
 };
 </script>

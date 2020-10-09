@@ -4,40 +4,43 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 const routes = [{
-        path: '/',
-        redirect: '/index',
+  path: '/',
+  redirect: '/index',
+},
+{
+  path: '/index',
+  component: () => import('../views/Index.vue'),
+},
+{
+  path: '/mine',
+  component: () => import('../views/Mine.vue'),
+},
+{
+  path: '/hangzhou',
+  component: () => import('../views/Hangzhou.vue'),
+  children: [
+    {
+      path: '/',
+      redirect: '/rese',
     },
     {
-        path: '/index',
-        component: () =>
-            import ('../views/Index.vue'),
+      path: '/rese',
+      component: () => import('../components/hangzhou/Rese.vue'),
     },
     {
-        path: '/mine',
-        component: () =>
-            import ('../views/Mine.vue'),
+      path: '/strategy',
+      component: () => import('../components/hangzhou/Strategy.vue'),
     },
     {
-        path: '/hangzhou',
-        component: () =>
-            import ('../views/Hangzhou.vue'),
+      path: '/trip',
+      component: () => import('../components/hangzhou/Trip.vue'),
     },
     {
-        path: '/register',
-        component: () =>
-            import ('../views/Register.vue'),
+      path: '/note',
+      component: () => import('../components/hangzhou/Note.vue'),
     },
     {
-        path: '/setting',
-        component: () =>
-            import ('../components/mine/Setting.vue'),
-    },
-    {
-        path: '/message',
-        component: () =>
-            import ('../components/mine/Message.vue'),
-    },
-    {
+<<<<<<< HEAD
         path: '/person',
         component: () =>
             import ('../components/mine/PersonPage.vue'),
@@ -47,12 +50,42 @@ const routes = [{
         path: '*',
         component: () =>
             import ('../views/404.vue'),
+=======
+      path: '/movie',
+      component: () => import('../components/hangzhou/Movie.vue'),
+>>>>>>> master
     },
+  ],
+},
+{
+  path: '/cities',
+  component: () => import('../views/Cities.vue'),
+},
+{
+  path: '/register',
+  component: () => import('../views/Register.vue'),
+},
+{
+  path: '/community',
+  component: () => import('../views/community.vue'),
+},
+{
+  path: '/setting',
+  component: () => import('../components/mine/Setting.vue'),
+},
+{
+  path: '/message',
+  component: () => import('../components/mine/Message.vue'),
+},
+{
+  path: '*',
+  component: () => import('../views/404.vue'),
+},
 
 ];
 
 const router = new VueRouter({
-    routes,
+  routes,
 });
 
 export default router;

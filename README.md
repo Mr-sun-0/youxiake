@@ -21,6 +21,9 @@ npm run lint
 ```
 
 ### Customize configuration
+<<<<<<< HEAD
+See [Configuration Reference](https://cli.vuejs.org/co
+=======
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### gaotian-1005
@@ -33,3 +36,4 @@ Index路由
 
 ### gaotian-1007
 添加了底部导航
+>>>>>>> master

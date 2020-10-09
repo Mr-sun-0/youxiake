@@ -1,4 +1,5 @@
 module.exports = {
+<<<<<<< HEAD
     devServer: {
         proxy: {
             '/api': {
@@ -15,3 +16,19 @@ module.exports = {
     },
     lintOnSave: false
 };
+=======
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'https://m.youxiake.com',
+        ws: true,
+        changeOrigin: true,
+      },
+    },
+  },
+  // overlay: {
+  //   warnings: false,
+  //   errors: true,
+  // },// lintOnSave: false,
+};
+>>>>>>> master
