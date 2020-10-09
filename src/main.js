@@ -1,10 +1,10 @@
 import {
-    Search,
-    Lazyload,
-    Swipe,
-    SwipeItem,
-    Image as VanImage,
-    Icon
+  Search,
+  Lazyload,
+  Swipe,
+  SwipeItem,
+  Image as VanImage,
+  Icon,
 } from 'vant';
 import Vue from 'vue';
 import router from './router';
@@ -12,10 +12,10 @@ import store from './store';
 import App from './App.vue';
 import 'amfe-flexible';
 
-//引入reset文件
+// 引入reset文件
 import './assets/css/reset.less';
-Vue.config.productionTip = false;
 
+Vue.config.productionTip = false;
 
 Vue.use(Icon);
 Vue.use(VanImage);
@@ -25,7 +25,7 @@ Vue.use(Swipe);
 Vue.use(SwipeItem);
 
 new Vue({
-    router,
-    store,
-    render: (h) => h(App),
+  router,
+  store,
+  render: (h) => h(App),
 }).$mount('#app');
