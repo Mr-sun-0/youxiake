@@ -18,6 +18,36 @@ const routes = [{
 {
   path: '/hangzhou',
   component: () => import('../views/Hangzhou.vue'),
+  children: [
+    {
+      path: '/',
+      redirect: '/rese',
+    },
+    {
+      path: '/rese',
+      component: () => import('../components/hangzhou/Rese.vue'),
+    },
+    {
+      path: '/strategy',
+      component: () => import('../components/hangzhou/Strategy.vue'),
+    },
+    {
+      path: '/trip',
+      component: () => import('../components/hangzhou/Trip.vue'),
+    },
+    {
+      path: '/note',
+      component: () => import('../components/hangzhou/Note.vue'),
+    },
+    {
+      path: '/movie',
+      component: () => import('../components/hangzhou/Movie.vue'),
+    },
+  ],
+},
+{
+  path: '/cities',
+  component: () => import('../views/Cities.vue'),
 },
 {
   path: '/register',
