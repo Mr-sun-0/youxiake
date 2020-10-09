@@ -5,7 +5,7 @@
         <span @click="toSetting">
           <van-icon name="setting-o" />
         </span>
-        <span>
+        <span @click="toMessage">
           <van-icon name="chat-o" badge="99+" />
         </span>
 
@@ -181,6 +181,9 @@ export default {
     toRegister() {
       this.$router.push('/register');
     },
+    toMessage(){
+      this.$router.push('/message');
+    }
   },
 };
 </script>
