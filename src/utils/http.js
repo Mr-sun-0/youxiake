@@ -6,7 +6,7 @@ const instance = axios.create({
 });
 
 const http = {
-  get(url, params) {
+  async get(url, params) {
     return new Promise((resolve, reject) => {
       instance
         .get(url, {
