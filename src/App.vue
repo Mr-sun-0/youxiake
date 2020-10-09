@@ -7,6 +7,7 @@
 
 <script>
 import AppBottom from '@/components/public/AppBottom.vue';
+
 export default {
   components: {
     AppBottom,

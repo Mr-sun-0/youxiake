@@ -7,7 +7,7 @@
       </header>
       <index-midnav />
       <index-function />
-      <index-recommend :aroundLump='dataList.aroundLump'/>
+      <index-recommend/>
     </div>
 </template>
 
@@ -33,14 +33,7 @@ export default {
     return {
       dataList: [],
     };
-  },
-  mounted() {
-    getData().then((res) => {
-      if (res.data.msg === 'Succ') {
-        this.dataList = res.data.data;
-      }
-    });
-  },
+  }
 };
 </script>
 

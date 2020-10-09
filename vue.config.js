@@ -10,7 +10,7 @@ module.exports = {
     // 关闭eslint
     // overlay: {
     //   warnings: false,
-    //   errors: true,
+    //   errors: false,
     // }
   },
   // lintOnSave: false
