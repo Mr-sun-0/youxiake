@@ -7,16 +7,11 @@ module.exports = {
                 changeOrigin: true,
             },
         },
-        // 关闭eslint
-        // overlay: {
-        //     warnings: false,
-        //     errors: false,
-        // }
     },
     // 关闭eslint
     overlay: {
       warnings: false,
-      errors: true,
+      errors: false,
     },
-  lintOnSave: true,
+  lintOnSave: false,
 };
