@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
-      <app-bottom />
+    <app-bottom />
   </div>
 </template>
 
@@ -13,7 +13,6 @@ export default {
     AppBottom,
   },
 };
-
 </script>
 
 <style lang="less">

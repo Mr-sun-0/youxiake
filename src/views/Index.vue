@@ -7,7 +7,9 @@
       </header>
       <index-midnav />
       <index-function />
-      <index-recommend :aroundLump='dataList.aroundLump'/>
+      <index-recommend/>
+      <index-action />
+      <index-minority />
     </div>
 </template>
 
@@ -18,7 +20,8 @@ import IndexBanner from '@/components/index/IndexBanner.vue';
 import IndexMidnav from '@/components/index/IndexMidnav.vue';
 import IndexFunction from '@/components/index/IndexFunction.vue';
 import IndexRecommend from '@/components/index/IndexRecommend.vue';
-import { getData } from '../utils/api';
+import IndexAction from '@/components/index/IndexAction.vue';
+import IndexMinority from '@/components/index/IndexMinority.vue';
 
 export default {
   components: {
@@ -28,18 +31,11 @@ export default {
     IndexMidnav,
     IndexFunction,
     IndexRecommend,
-  },
-  data() {
-    return {
-      dataList: [],
-    };
+    IndexAction,
+    IndexMinority,
   },
   mounted() {
-    getData().then((res) => {
-      if (res.data.msg === 'Succ') {
-        this.dataList = res.data.data;
-      }
-    });
+    this.$store.dispatch('getIndexData');
   },
 };
 </script>
