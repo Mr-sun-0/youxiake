@@ -8,10 +8,10 @@ module.exports = {
     '@vue/airbnb',
   ],
   parserOptions: {
-    // parser: 'babel-eslint',
+    parser: 'babel-eslint',
   },
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'warn',
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'linebreak-style': 0,
   },

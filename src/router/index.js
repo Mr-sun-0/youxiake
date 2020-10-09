@@ -3,25 +3,60 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-const routes = [{
+const routes = [
+  {
+    path: '/',
+    redirect: '/index',
+  },
+  {
+    path: '/index',
+    component: () => import('../views/Index.vue'),
+  },
+  {
+    path: '/mine',
+    component: () => import('../views/Mine.vue'),
+  },
+  {
+    path: '/hangzhou',
+    component: () => import('../views/Hangzhou.vue'),
+    children: [
+      {
         path: '/',
-        component: () =>
-            import ('../views/Index.vue'),
-    },
-    {
-        path: '/mine',
-        component: () =>
-            import ('../views/Mine.vue'),
-    },
-    {
-        path:'/hangzhou',
-        component:()=>
-            import('../views/Hangzhou.vue')
-    }
-];
+        redirect: '/rese',
+      },
+      {
+        path: '/rese',
+        component: () => import('../components/hangzhou/Rese.vue'),
+      },
+      {
+        path: '/strategy',
+        component: () => import('../components/hangzhou/Strategy.vue'),
+      },
+      {
+        path: '/trip',
+        component: () => import('../components/hangzhou/Trip.vue'),
+      },
+      {
+        path: '/note',
+        component: () => import('../components/hangzhou/Note.vue'),
+      },
+      {
+        path: '/movie',
+        component: () => import('../components/hangzhou/Movie.vue'),
+      },
+    ],
+  },
+  {
+    path: '/cities',
+    component: () => import('../views/Cities.vue'),
+  },
+  {
+    path: '*',
+    component: () => import('../views/404.vue'),
+  }];
 
 const router = new VueRouter({
-    routes,
+  routes,
 });
 
 export default router;
