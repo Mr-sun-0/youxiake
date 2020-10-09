@@ -4,7 +4,7 @@
         <van-search
         v-model="value"
         shape="round"
-        background='orange'
+        background="#fedb39"
         />
         <img src="../../assets/images/index/saosao.png">
     </div>
