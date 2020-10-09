@@ -25,8 +25,8 @@ const http = {
     return new Promise((resolve, reject) => {
       instance.post(url)
         .then((response) => {
-          console.log(response);
-          // resolve(response.data);
+          // console.log(response);
+          resolve(response.data);
         })
         .catch((error) => {
           Toast(error.message);

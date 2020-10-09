@@ -10,7 +10,6 @@
     </div>
 </template>
 <script>
-import { getCitiesList } from '../utils/api';
 
 export default {
   data() {
@@ -18,26 +17,26 @@ export default {
       list: [],
     };
   },
-  mounted() {
-    this.getList();
-  },
-  methods: {
-    async getList() {
-      console.log(2);
-      const res = await getCitiesList();
-      console.log(res);
+  // mounted() {
+  //   this.getList();
+  // },
+  // methods: {
+  //   async getList() {
+  //     console.log(2);
+  //     const res = await getCitiesList();
+  //     console.log(res);
 
-    //   this.list = res;
-    },
-    // handleClick(it){
-    //     // console.log(it);
-    //     this.$store.commit('changeCity',it)
-    //     this.$router.go(-1);//点击后 返回到原页面
-    // },
-    onClickLeft() {
-      this.$router.go(-1);
-    },
-  },
+  //   //   this.list = res;
+  //   },
+  //   // handleClick(it){
+  //   //     // console.log(it);
+  //   //     this.$store.commit('changeCity',it)
+  //   //     this.$router.go(-1);//点击后 返回到原页面
+  //   // },
+  //   onClickLeft() {
+  //     this.$router.go(-1);
+  //   },
+  // },
 };
 </script>
 <style lang="less">
