@@ -69,7 +69,7 @@
                 vertical-align: middle;
             }
             input{
-                margin-top: 4px;
+                margin-top: 6px;
                 margin-left: 32px;
                 border: none;
                 vertical-align: middle;

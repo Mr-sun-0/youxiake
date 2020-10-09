@@ -2,7 +2,7 @@
     <div class="main">
         <span class="tuijian">为你推荐</span>
         <ul class="right">
-            <li>热门</li>
+            <li class="li1">热门</li>
             <li>最新</li>
         </ul>
     </div>
@@ -27,6 +27,10 @@
             padding: 0 12px;
             text-align: center;
             float: left;
+        }
+        .li1{
+            border-right: 1px solid #b0b0b0;
+            color: #e5ac04;
         }
     }
 }
