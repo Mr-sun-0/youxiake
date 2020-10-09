@@ -14,6 +14,9 @@ import {
   Field,
   Button,
   NavBar,
+  Cell,
+  CellGroup,
+  List,
 
 } from 'vant';
 import Vue from 'vue';
@@ -26,7 +29,7 @@ import 'amfe-flexible';
 import './assets/css/reset.less';
 
 Vue.config.productionTip = false;
-
+Vue.use(List);
 Vue.use(Button);
 Vue.use(Field);
 Vue.use(Icon);
@@ -42,6 +45,8 @@ Vue.use(TabbarItem);
 Vue.use(Tab);
 Vue.use(Tabs);
 Vue.use(NavBar);
+Vue.use(Cell);
+Vue.use(CellGroup);
 
 new Vue({
   router,

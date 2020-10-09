@@ -9,8 +9,8 @@ module.exports = {
     },
     // 关闭eslint
     // overlay: {
-    //   warnings: false,
-    //   errors: true,
+    //     warnings: false,
+    //     errors: true,
     // }
   },
   // lintOnSave: false

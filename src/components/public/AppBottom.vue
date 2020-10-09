@@ -1,6 +1,6 @@
 <template>
     <div>
-      <van-tabbar route active-color="orange">
+      <van-tabbar route active-color="orange" placeholder >
         <van-tabbar-item replace to='/index' icon="@/assets/icon/public/icon01.png">首页
         </van-tabbar-item>
         <van-tabbar-item replace to='/hangzhou' icon="@/assets/icon/public/icon02.png">杭州

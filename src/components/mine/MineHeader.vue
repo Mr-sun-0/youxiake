@@ -2,12 +2,13 @@
   <div class="wrap">
     <div class="headwrap">
       <div class="setting">
-        <span>
+        <span @click="toSetting">
           <van-icon name="setting-o" />
         </span>
         <span>
-          <van-icon name="chat-o" />
+          <van-icon name="chat-o" badge="99+" />
         </span>
+
       </div>
       <div class="top">
         <van-image
@@ -16,7 +17,8 @@
           height="1.2rem"
           src="https://img.yzcdn.cn/vant/cat.jpeg"
         />
-        <span>点击登录/注册</span>
+        <span @click="toRegister">点击登录/注册</span>
+        <p>个人主页</p>
       </div>
       <ul class="headbottom">
         <li v-for="(item, index) in headList" :key="index">
@@ -62,21 +64,46 @@
             </div>
         </div>
         <div class="sel">精选推荐</div>
-        <div class="recommend">
-            <li v-for="(item,index) in recommendList" :key="index">
+         <van-list
+          v-model="loading"
+          :finished="finished"
+          finished-text="没有更多了"
+
+        >
+          <div class="recommend">
+            <li v-for="(item,index) in mineRecommend.data" :key="index">
                 <img :src="item.img" alt="">
-                <span class="describe">{{item.describe}}</span>
-                <span class="price">￥{{item.price}}</span>
+                <span class="describe">{{item.name}}</span>
+                <span class="price">￥{{item.minprice}}</span>
             </li>
-        </div>
+          </div>
+
+        </van-list>
+
     </div>
 
   </div>
 </template>
 <script>
+import icon1 from '@/assets/icon/mine/icon01@2x.png';
+import icon2 from '@/assets/icon/mine/icon02@2x.png';
+import icon3 from '@/assets/icon/mine/icon03@2x.png';
+import icon4 from '@/assets/icon/mine/icon04@2x.png';
+import icon5 from '@/assets/icon/mine/icon05@2x.png';
+import icon6 from '@/assets/icon/mine/icon06@2x.png';
+import icon7 from '@/assets/icon/mine/icon07@2x.png';
+import icon8 from '@/assets/icon/mine/icon08@2x.png';
+import icon9 from '@/assets/icon/mine/icon09@2x.png';
+import icon10 from '@/assets/icon/mine/icon10@2x.png';
+import icon11 from '@/assets/icon/mine/icon11@2x.png';
+import icon12 from '@/assets/icon/mine/icon12@2x.png';
+
 export default {
+  props: ['mineRecommend'],
   data() {
     return {
+      loading: false,
+      finished: false,
       headList: [
         {
           count: 0,
@@ -93,89 +120,67 @@ export default {
       ],
       travelList: [
         {
-          icon: require('@/assets/icon/mine/icon01@2x.png'),
+          icon: icon1,
           msg: '待付款',
         },
         {
-          icon: require('@/assets/icon/mine/icon02@2x.png'),
+          icon: icon2,
           msg: '报名成功',
         },
         {
-          icon: require('@/assets/icon/mine/icon03@2x.png'),
+          icon: icon3,
           msg: '替补',
         },
         {
-          icon: require('@/assets/icon/mine/icon04@2x.png'),
+          icon: icon4,
           msg: '待评价',
         },
         {
-          icon: require('@/assets/icon/mine/icon05@2x.png'),
+          icon: icon5,
           msg: '退款/取消',
         },
       ],
       myserveList: [
         {
-          icon: require('@/assets/icon/mine/icon06@2x.png'),
+          icon: icon6,
+          // icon: () => import('@/assets/icon/mine/icon06@2x.png'),
           msg: '签证订单',
         },
         {
-          icon: require('@/assets/icon/mine/icon07@2x.png'),
+          icon: icon7,
           msg: '集市订单',
         },
         {
-          icon: require('@/assets/icon/mine/icon08@2x.png'),
+          icon: icon8,
           msg: '集市购物车',
         },
         {
-          icon: require('@/assets/icon/mine/icon09@2x.png'),
+          icon: icon9,
           msg: '常用信息',
         },
         {
-          icon: require('@/assets/icon/mine/icon10@2x.png'),
+          icon: icon10,
           msg: '分享APP',
         },
         {
-          icon: require('@/assets/icon/mine/icon11@2x.png'),
+          icon: icon11,
           msg: '在线客服',
         },
         {
-          icon: require('@/assets/icon/mine/icon12@2x.png'),
+          icon: icon12,
           msg: '意见建议',
         },
       ],
-      recommendList: [
-        {
-          img: 'http://gallery.youxiake.com/Public/Data/upload/productimg/202007/02/5efd71ad3d0e4.jpg?imageslim',
-          describe: '[越野派 • 羌塘无人区]游侠客获官方正规许可！世界第三极普若岗日 / 追寻野生动物足迹 / 驰骋藏地一措再措 / 泡巴岭八千万年温泉，10%挑战级路况，驶向荒野9日探险',
-          price: '16800',
-        },
-        {
-          img: 'http://gallery.youxiake.com/Public/Data/upload/productimg/202005/26/5eccd5007bec8.jpg?imageslim',
-          describe: '[越野派 • 羌塘无人区]游侠客获官方正规许可！世界第三极普若岗日 / 追寻野生动物足迹 / 驰骋藏地一措再措 / 泡巴岭八千万年温泉，10%挑战级路况，驶向荒野9日探险',
-          price: '16800',
-        },
-        {
-          img: 'http://gallery.youxiake.com/Public/Data/upload/productimg/202007/09/5f067ef56c070.jpg?imageslim',
-          describe: '[越野派 • 羌塘无人区]游侠客获官方正规许可！世界第三极普若岗日 / 追寻野生动物足迹 / 驰骋藏地一措再措 / 泡巴岭八千万年温泉，10%挑战级路况，驶向荒野9日探险',
-          price: '16800',
-        },
-        {
-          img: 'http://gallery.youxiake.com/Public/Data/upload/productimg/201711/21/5a1414ece2408.jpg?imageslim',
-          describe: '[越野派 • 羌塘无人区]游侠客获官方正规许可！世界第三极普若岗日 / 追寻野生动物足迹 / 驰骋藏地一措再措 / 泡巴岭八千万年温泉，10%挑战级路况，驶向荒野9日探险',
-          price: '16800',
-        },
-        {
-          img: 'http://gallery.youxiake.com/Public/Data/upload/productimg/201907/16/5d2da20d4d923.jpg?imageslim',
-          describe: '[越野派 • 羌塘无人区]游侠客获官方正规许可！世界第三极普若岗日 / 追寻野生动物足迹 / 驰骋藏地一措再措 / 泡巴岭八千万年温泉，10%挑战级路况，驶向荒野9日探险',
-          price: '16800',
-        },
-        {
-          img: 'http://gallery.youxiake.com/Public/Data/upload/productimg/201904/24/5cbfdab65dd77.jpg?imageslim',
-          describe: '[越野派 • 羌塘无人区]游侠客获官方正规许可！世界第三极普若岗日 / 追寻野生动物足迹 / 驰骋藏地一措再措 / 泡巴岭八千万年温泉，10%挑战级路况，驶向荒野9日探险',
-          price: '16800',
-        },
-      ],
     };
+  },
+
+  methods: {
+    toSetting() {
+      this.$router.push('/setting');
+    },
+    toRegister() {
+      this.$router.push('/register');
+    },
   },
 };
 </script>
@@ -199,15 +204,29 @@ export default {
     margin-right: 20px;
   }
   margin-bottom: 10px;
+
 }
 .top {
   display: flex;
   align-items: center;
+  position: relative;
+  // line-height:1.2rem;
   span {
     font-size: 18px;
     font-weight: 700;
     color: #000;
     margin-left: 10px;
+  }
+  p{
+    font-size: 18px;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    border-radius: 15px;
+    background-color: #f9f9f9
+    ;
+    padding: 5px;
+
   }
 }
 .headbottom {
