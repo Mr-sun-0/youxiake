@@ -24,6 +24,10 @@ const routes = [{
   component: () => import('../views/Register.vue'),
 },
 {
+  path: '/community',
+  component: () => import('../views/community.vue'),
+},
+{
   path: '/setting',
   component: () => import('../components/mine/Setting.vue'),
 },
