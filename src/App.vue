@@ -1,8 +1,20 @@
 <template>
   <div id="app">
     <router-view/>
+      <app-bottom />
   </div>
 </template>
+
+<script>
+import AppBottom from '@/components/public/AppBottom.vue';
+
+export default {
+  components: {
+    AppBottom,
+  },
+};
+
+</script>
 
 <style lang="less">
 #app {

@@ -31,7 +31,7 @@
         </li>
       </ul>
     </div>
-    
+
     <div class="mainwrap">
         <!-- 出行订单 -->
       <div class="travel">
@@ -70,7 +70,7 @@
             </li>
         </div>
     </div>
-   
+
   </div>
 </template>
 <script>
@@ -80,101 +80,101 @@ export default {
       headList: [
         {
           count: 0,
-          content: "收藏",
+          content: '收藏',
         },
         {
           count: 0,
-          content: "浏览",
+          content: '浏览',
         },
         {
           count: 0,
-          content: "动态",
+          content: '动态',
         },
       ],
       travelList: [
         {
-          icon: require("@/assets/icon/mine/icon01@2x.png"),
-          msg: "待付款",
+          icon: require('@/assets/icon/mine/icon01@2x.png'),
+          msg: '待付款',
         },
         {
-          icon: require("@/assets/icon/mine/icon02@2x.png"),
-          msg: "报名成功",
+          icon: require('@/assets/icon/mine/icon02@2x.png'),
+          msg: '报名成功',
         },
         {
-          icon: require("@/assets/icon/mine/icon03@2x.png"),
-          msg: "替补",
+          icon: require('@/assets/icon/mine/icon03@2x.png'),
+          msg: '替补',
         },
         {
-          icon: require("@/assets/icon/mine/icon04@2x.png"),
-          msg: "待评价",
+          icon: require('@/assets/icon/mine/icon04@2x.png'),
+          msg: '待评价',
         },
         {
-          icon: require("@/assets/icon/mine/icon05@2x.png"),
-          msg: "退款/取消",
+          icon: require('@/assets/icon/mine/icon05@2x.png'),
+          msg: '退款/取消',
         },
       ],
-      myserveList:[
-          {
-          icon: require("@/assets/icon/mine/icon06@2x.png"),
-          msg: "签证订单",
-          },
-           {
-          icon: require("@/assets/icon/mine/icon07@2x.png"),
-          msg: "集市订单",
-          },
-           {
-          icon: require("@/assets/icon/mine/icon08@2x.png"),
-          msg: "集市购物车",
-          },
-           {
-          icon: require("@/assets/icon/mine/icon09@2x.png"),
-          msg: "常用信息",
-          },
-           {
-          icon: require("@/assets/icon/mine/icon10@2x.png"),
-          msg: "分享APP",
-          },
-           {
-          icon:require("@/assets/icon/mine/icon11@2x.png"),
-          msg: "在线客服",
-          },
-           {
-          icon: require("@/assets/icon/mine/icon12@2x.png"),
-          msg: "意见建议",
-          },
+      myserveList: [
+        {
+          icon: require('@/assets/icon/mine/icon06@2x.png'),
+          msg: '签证订单',
+        },
+        {
+          icon: require('@/assets/icon/mine/icon07@2x.png'),
+          msg: '集市订单',
+        },
+        {
+          icon: require('@/assets/icon/mine/icon08@2x.png'),
+          msg: '集市购物车',
+        },
+        {
+          icon: require('@/assets/icon/mine/icon09@2x.png'),
+          msg: '常用信息',
+        },
+        {
+          icon: require('@/assets/icon/mine/icon10@2x.png'),
+          msg: '分享APP',
+        },
+        {
+          icon: require('@/assets/icon/mine/icon11@2x.png'),
+          msg: '在线客服',
+        },
+        {
+          icon: require('@/assets/icon/mine/icon12@2x.png'),
+          msg: '意见建议',
+        },
       ],
-      recommendList:[
-          {
-              img:'http://gallery.youxiake.com/Public/Data/upload/productimg/202007/02/5efd71ad3d0e4.jpg?imageslim',
-              describe:'[越野派 • 羌塘无人区]游侠客获官方正规许可！世界第三极普若岗日 / 追寻野生动物足迹 / 驰骋藏地一措再措 / 泡巴岭八千万年温泉，10%挑战级路况，驶向荒野9日探险',
-              price:'16800'
-          },
-            {
-              img:'http://gallery.youxiake.com/Public/Data/upload/productimg/202005/26/5eccd5007bec8.jpg?imageslim',
-              describe:'[越野派 • 羌塘无人区]游侠客获官方正规许可！世界第三极普若岗日 / 追寻野生动物足迹 / 驰骋藏地一措再措 / 泡巴岭八千万年温泉，10%挑战级路况，驶向荒野9日探险',
-              price:'16800'
-          },
-            {
-              img:'http://gallery.youxiake.com/Public/Data/upload/productimg/202007/09/5f067ef56c070.jpg?imageslim',
-              describe:'[越野派 • 羌塘无人区]游侠客获官方正规许可！世界第三极普若岗日 / 追寻野生动物足迹 / 驰骋藏地一措再措 / 泡巴岭八千万年温泉，10%挑战级路况，驶向荒野9日探险',
-              price:'16800'
-          },
-            {
-              img:'http://gallery.youxiake.com/Public/Data/upload/productimg/201711/21/5a1414ece2408.jpg?imageslim',
-              describe:'[越野派 • 羌塘无人区]游侠客获官方正规许可！世界第三极普若岗日 / 追寻野生动物足迹 / 驰骋藏地一措再措 / 泡巴岭八千万年温泉，10%挑战级路况，驶向荒野9日探险',
-              price:'16800'
-          },
-            {
-              img:'http://gallery.youxiake.com/Public/Data/upload/productimg/201907/16/5d2da20d4d923.jpg?imageslim',
-              describe:'[越野派 • 羌塘无人区]游侠客获官方正规许可！世界第三极普若岗日 / 追寻野生动物足迹 / 驰骋藏地一措再措 / 泡巴岭八千万年温泉，10%挑战级路况，驶向荒野9日探险',
-              price:'16800'
-          },
-             {
-              img:'http://gallery.youxiake.com/Public/Data/upload/productimg/201904/24/5cbfdab65dd77.jpg?imageslim',
-              describe:'[越野派 • 羌塘无人区]游侠客获官方正规许可！世界第三极普若岗日 / 追寻野生动物足迹 / 驰骋藏地一措再措 / 泡巴岭八千万年温泉，10%挑战级路况，驶向荒野9日探险',
-              price:'16800'
-          },
-      ]
+      recommendList: [
+        {
+          img: 'http://gallery.youxiake.com/Public/Data/upload/productimg/202007/02/5efd71ad3d0e4.jpg?imageslim',
+          describe: '[越野派 • 羌塘无人区]游侠客获官方正规许可！世界第三极普若岗日 / 追寻野生动物足迹 / 驰骋藏地一措再措 / 泡巴岭八千万年温泉，10%挑战级路况，驶向荒野9日探险',
+          price: '16800',
+        },
+        {
+          img: 'http://gallery.youxiake.com/Public/Data/upload/productimg/202005/26/5eccd5007bec8.jpg?imageslim',
+          describe: '[越野派 • 羌塘无人区]游侠客获官方正规许可！世界第三极普若岗日 / 追寻野生动物足迹 / 驰骋藏地一措再措 / 泡巴岭八千万年温泉，10%挑战级路况，驶向荒野9日探险',
+          price: '16800',
+        },
+        {
+          img: 'http://gallery.youxiake.com/Public/Data/upload/productimg/202007/09/5f067ef56c070.jpg?imageslim',
+          describe: '[越野派 • 羌塘无人区]游侠客获官方正规许可！世界第三极普若岗日 / 追寻野生动物足迹 / 驰骋藏地一措再措 / 泡巴岭八千万年温泉，10%挑战级路况，驶向荒野9日探险',
+          price: '16800',
+        },
+        {
+          img: 'http://gallery.youxiake.com/Public/Data/upload/productimg/201711/21/5a1414ece2408.jpg?imageslim',
+          describe: '[越野派 • 羌塘无人区]游侠客获官方正规许可！世界第三极普若岗日 / 追寻野生动物足迹 / 驰骋藏地一措再措 / 泡巴岭八千万年温泉，10%挑战级路况，驶向荒野9日探险',
+          price: '16800',
+        },
+        {
+          img: 'http://gallery.youxiake.com/Public/Data/upload/productimg/201907/16/5d2da20d4d923.jpg?imageslim',
+          describe: '[越野派 • 羌塘无人区]游侠客获官方正规许可！世界第三极普若岗日 / 追寻野生动物足迹 / 驰骋藏地一措再措 / 泡巴岭八千万年温泉，10%挑战级路况，驶向荒野9日探险',
+          price: '16800',
+        },
+        {
+          img: 'http://gallery.youxiake.com/Public/Data/upload/productimg/201904/24/5cbfdab65dd77.jpg?imageslim',
+          describe: '[越野派 • 羌塘无人区]游侠客获官方正规许可！世界第三极普若岗日 / 追寻野生动物足迹 / 驰骋藏地一措再措 / 泡巴岭八千万年温泉，10%挑战级路况，驶向荒野9日探险',
+          price: '16800',
+        },
+      ],
     };
   },
 };
@@ -228,7 +228,7 @@ export default {
     >span:first-child{
          height: 25px;
     }
-    
+
   }
   >li:last-child p img{
       width: 30px;
@@ -238,7 +238,7 @@ export default {
 }
 .mainwrap {
   padding: 0 10px;
-  
+
   .travel {
     padding: 15px;
     margin-top: 10px;
@@ -270,7 +270,7 @@ export default {
             margin-top: 10px;
              font-size: 14px;
              display: block;
-            
+
         }
       }
     }
@@ -291,7 +291,7 @@ export default {
       span{
         font-size: 18px;
        font-weight: 700;
-       
+
       }
       .menu {
       display: flex;
@@ -303,7 +303,7 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        
+
         width: 25%;
          img{
                  width: 25px;
@@ -313,7 +313,7 @@ export default {
             margin: 10px 0;
              font-size: 14px;
               display: block;
-            
+
         }
       }
     }
@@ -357,6 +357,6 @@ export default {
           }
       }
   }
-  
+
 }
 </style>

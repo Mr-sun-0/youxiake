@@ -2,7 +2,7 @@
     <div>
      <van-swipe :autoplay="3000">
        <van-swipe-item v-for="(image, index) in BannerList" :key="index">
-        <img v-lazy="image.url" />
+        <img v-lazy=image.url />
        </van-swipe-item>
       </van-swipe>
     </div>
