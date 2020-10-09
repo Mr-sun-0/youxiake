@@ -18,7 +18,7 @@
           src="https://img.yzcdn.cn/vant/cat.jpeg"
         />
         <span @click="toRegister">点击登录/注册</span>
-        <p>个人主页</p>
+        <p @click="toPerson">个人主页</p>
       </div>
       <ul class="headbottom">
         <li v-for="(item, index) in headList" :key="index">
@@ -74,13 +74,14 @@
             <li v-for="(item,index) in mineRecommend.data" :key="index">
                 <img :src="item.img" alt="">
                 <span class="describe">{{item.name}}</span>
-                <span class="price">￥{{item.minprice}}</span>
+                <span class="price">￥{{item.minprice}}起</span>
             </li>
           </div>
 
         </van-list>
 
     </div>
+    <router-view></router-view>
 
   </div>
 </template>
@@ -181,8 +182,11 @@ export default {
     toRegister() {
       this.$router.push('/register');
     },
-    toMessage(){
+    toMessage() {
       this.$router.push('/message');
+    },
+    toPerson(){
+      this.$router.push('/person');
     }
   },
 };

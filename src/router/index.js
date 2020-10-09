@@ -38,6 +38,12 @@ const routes = [{
             import ('../components/mine/Message.vue'),
     },
     {
+        path: '/person',
+        component: () =>
+            import ('../components/mine/PersonPage.vue'),
+    },
+
+    {
         path: '*',
         component: () =>
             import ('../views/404.vue'),

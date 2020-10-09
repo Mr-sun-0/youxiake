@@ -1,23 +1,23 @@
 import {
-    Search,
-    Lazyload,
-    Swipe,
-    SwipeItem,
-    Grid,
-    GridItem,
-    Image as VanImage,
-    Icon,
-    Tabbar,
-    TabbarItem,
-    Tab,
-    Tabs,
-    Field,
-    Button,
-    NavBar,
-    Cell,
-    CellGroup,
-    List,
-    ShareSheet,
+  Search,
+  Lazyload,
+  Swipe,
+  SwipeItem,
+  Grid,
+  GridItem,
+  Image as VanImage,
+  Icon,
+  Tabbar,
+  TabbarItem,
+  Tab,
+  Tabs,
+  Field,
+  Button,
+  NavBar,
+  Cell,
+  CellGroup,
+  List,
+  ShareSheet,
 
 } from 'vant';
 import Vue from 'vue';
@@ -51,7 +51,7 @@ Vue.use(CellGroup);
 Vue.use(ShareSheet);
 
 new Vue({
-    router,
-    store,
-    render: (h) => h(App),
+  router,
+  store,
+  render: (h) => h(App),
 }).$mount('#app');
