@@ -7,7 +7,10 @@
             <span class="yujian">遇见周榜</span>
             <div class="yuan">→</div>
         </div>
-        <div class="photo"></div>
+        <div class="photo">
+            <span>这些景点不要钱</span>
+            <p class="span2">1228人浏览</p>
+        </div>
     </div>
     <div class="banner">
         <img src="../../assets/images/meet/banner.jpg" alt="">
@@ -64,6 +67,15 @@
                 float: left;
                 margin-top: 10px;
                 margin-left: 20px;
+                padding: 0 13px;
+                span{
+                    font-size: 14px;
+                    color: #ffffff;
+                }
+                p{
+                    font-size: 10px;
+                    color: #ffffff;
+                }
             }
     }
     .banner{
