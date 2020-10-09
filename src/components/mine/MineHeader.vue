@@ -181,9 +181,9 @@ export default {
     toRegister() {
       this.$router.push('/register');
     },
-    toMessage(){
+    toMessage() {
       this.$router.push('/message');
-    }
+    },
   },
 };
 </script>
