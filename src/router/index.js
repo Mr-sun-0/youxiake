@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import { Toast } from 'vant';
 
 Vue.use(VueRouter);
 
@@ -60,6 +61,7 @@ const routes = [{
 {
   path: '/community',
   component: () => import('../views/community.vue'),
+  meta: { needLogin: true },
 },
 {
   path: '/setting',
@@ -79,5 +81,17 @@ const routes = [{
 const router = new VueRouter({
   routes,
 });
-
+// 社区设置守卫需要token才能查看
+router.beforeEach((to, from, next) => {
+  if (to.meta.needLogin) {
+    if (sessionStorage.getItem('token')) {
+      next();
+    } else {
+      Toast('您还没有登入，给爷登入去');
+      next('/register');
+    }
+  } else {
+    next();
+  }
+});
 export default router;

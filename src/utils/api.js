@@ -11,3 +11,11 @@ export function getMineRecommend() {
 export function getCitiesList() {
   return http.post('/api.growingio.com/v2/a147ace5a8874284/web/action?');
 }
+// 获取短信验证码
+export function getCode(data) {
+  return http.post('http://www.pudge.wang:3001/register/getCode', data);
+}
+// 登入状态
+export function login(data) {
+  return http.post('http://www.pudge.wang:3001/register', data);
+}

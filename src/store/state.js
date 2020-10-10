@@ -5,6 +5,7 @@ const state = {
     name: '杭州',
     cityId: 0,
   },
+  registerList: [],
 };
 
 export default state;
