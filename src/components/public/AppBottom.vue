@@ -5,7 +5,7 @@
         </van-tabbar-item>
         <van-tabbar-item replace to='/hangzhou' icon="@/assets/icon/public/icon02.png">杭州
         </van-tabbar-item>
-        <van-tabbar-item replace to='/yujian' icon="@/assets/icon/public/icon03.png">遇见
+        <van-tabbar-item replace to='/meet' icon="@/assets/icon/public/icon03.png">遇见
         </van-tabbar-item>
         <van-tabbar-item replace to='/community' icon="@/assets/icon/public/icon04.png">社区
         </van-tabbar-item>
