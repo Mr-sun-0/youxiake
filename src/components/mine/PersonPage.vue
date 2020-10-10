@@ -36,13 +36,12 @@
             <span>获赞</span>
         </p>
 
-
     </div>
 </template>
 <script>
- import { Toast } from 'vant';
+import { Toast } from 'vant';
+
 export default {
-   
 
   data() {
     return {
@@ -70,7 +69,7 @@ export default {
     },
   },
 
-}
+};
 </script>
 
 <style lang="less" scoped>
@@ -81,6 +80,7 @@ export default {
     height: 300px;
     background: #fff url(../../assets/images/mine/mine-bg.png) 50% no-repeat;
     background-size: cover;
+
 }
 .topcontent{
     display: flex;

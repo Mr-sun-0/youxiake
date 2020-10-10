@@ -16,45 +16,44 @@ const routes = [{
   component: () => import('../views/Mine.vue'),
 },
 {
+  path: '/setting',
+  component: () => import('../components/mine/Setting.vue'),
+},
+{
+  path: '/message',
+  component: () => import('../components/mine/Message.vue'),
+},
+{
+  path: '/person',
+  component: () => import('../components/mine/PersonPage.vue'),
+},
+{
   path: '/hangzhou',
   component: () => import('../views/Hangzhou.vue'),
-  children: [
-    {
-      path: '/',
-      redirect: '/rese',
-    },
-    {
-      path: '/rese',
-      component: () => import('../components/hangzhou/Rese.vue'),
-    },
-    {
-      path: '/strategy',
-      component: () => import('../components/hangzhou/Strategy.vue'),
-    },
-    {
-      path: '/trip',
-      component: () => import('../components/hangzhou/Trip.vue'),
-    },
-    {
-      path: '/note',
-      component: () => import('../components/hangzhou/Note.vue'),
-    },
-    {
-<<<<<<< HEAD
-        path: '/person',
-        component: () =>
-            import ('../components/mine/PersonPage.vue'),
-    },
-
-    {
-        path: '*',
-        component: () =>
-            import ('../views/404.vue'),
-=======
-      path: '/movie',
-      component: () => import('../components/hangzhou/Movie.vue'),
->>>>>>> master
-    },
+  children: [{
+    path: '/',
+    redirect: '/rese',
+  },
+  {
+    path: '/rese',
+    component: () => import('../components/hangzhou/Rese.vue'),
+  },
+  {
+    path: '/strategy',
+    component: () => import('../components/hangzhou/Strategy.vue'),
+  },
+  {
+    path: '/trip',
+    component: () => import('../components/hangzhou/Trip.vue'),
+  },
+  {
+    path: '/note',
+    component: () => import('../components/hangzhou/Note.vue'),
+  },
+  {
+    path: '/movie',
+    component: () => import('../components/hangzhou/Movie.vue'),
+  },
   ],
 },
 {
@@ -69,14 +68,7 @@ const routes = [{
   path: '/community',
   component: () => import('../views/community.vue'),
 },
-{
-  path: '/setting',
-  component: () => import('../components/mine/Setting.vue'),
-},
-{
-  path: '/message',
-  component: () => import('../components/mine/Message.vue'),
-},
+
 {
   path: '*',
   component: () => import('../views/404.vue'),

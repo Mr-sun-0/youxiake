@@ -67,7 +67,8 @@ export default {
   },
 };
 </script>
-<style lang="less">
+<style lang="less" scoped>
+
     p{
         display: flex;
         padding: 20px;

@@ -81,8 +81,7 @@
         </van-list>
 
     </div>
-    <router-view></router-view>
-
+     <router-view></router-view>
   </div>
 </template>
 <script>
@@ -185,12 +184,9 @@ export default {
     toMessage() {
       this.$router.push('/message');
     },
-<<<<<<< HEAD
-    toPerson(){
+    toPerson() {
       this.$router.push('/person');
-    }
-=======
->>>>>>> master
+    },
   },
 };
 </script>
