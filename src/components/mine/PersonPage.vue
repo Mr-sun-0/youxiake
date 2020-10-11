@@ -1,4 +1,5 @@
 <template>
+  <div>
     <div class="wrap">
          <van-nav-bar
         title="个人主页"
@@ -31,12 +32,28 @@
             <span>个性签名</span>
         </p>
         <p class="p1">
-            <span>关注</span>
-            <span>粉丝</span>
-            <span>获赞</span>
+            <span>关注0</span>
+            <span>粉丝0</span>
+            <span>获赞0</span>
         </p>
 
     </div>
+      <ul>
+        <li v-for="(item, index) in list" :key="index"
+        :class="{active : activeIndex==index}" @click="tabsChange(index,item.url)">
+            {{item.title}}
+            <div class="underLine" v-if="activeIndex==index"></div>
+        </li>
+      </ul>
+<router-view></router-view>
+  <div class="publish">
+    <!-- <van-cell is-link @click="showPopup">展示弹出层</van-cell> -->
+    <p @click="showPopup"> + 发布</p>
+    <van-popup v-model="show" closeable position="bottom" :style="{ height: '30%' }">
+    </van-popup>
+  </div>
+  </div>
+
 </template>
 <script>
 import { Toast } from 'vant';
@@ -45,6 +62,8 @@ export default {
 
   data() {
     return {
+      show: false,
+      activeIndex: '',
       showShare: false,
       options: [
         { name: '微信', icon: 'wechat' },
@@ -52,6 +71,24 @@ export default {
         { name: '复制链接', icon: 'link' },
         { name: '分享海报', icon: 'poster' },
         { name: '二维码', icon: 'qrcode' },
+      ],
+      list: [
+        {
+          title: '遇见0',
+          url: '/metting',
+        },
+        {
+          title: '态度0',
+          url: '/attitude',
+        },
+        {
+          title: '摄影0',
+          url: '/phone',
+        },
+        {
+          title: '游记0',
+          url: '/travel',
+        },
       ],
     };
   },
@@ -66,6 +103,13 @@ export default {
     onSelect(option) {
       Toast(option.name);
       this.showShare = false;
+    },
+    tabsChange(i, url) {
+      this.activeIndex = i;
+      this.$router.push(url);
+    },
+    showPopup() {
+      this.show = true;
     },
   },
 
@@ -98,5 +142,49 @@ p{
     span{
         margin-right: 20px;
     }
+}
+ul{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 20px;
+  margin-top: 10px;
+
+.underLine {
+    position: relative;
+    bottom:-5px;
+    left: 50%;
+    width: 40px;
+    height: 3px;
+    border-radius: 6px;
+    background: orange;
+    transform: translateX(-50%);
+        }
+  .active {
+        color: #000;
+        font-weight: 900;
+    }
+}
+.publish{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 99;
+  background-color: #fff;
+  p{
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    background: orange;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 20px;
+
+  }
+
 }
 </style>

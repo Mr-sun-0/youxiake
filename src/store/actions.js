@@ -1,4 +1,4 @@
-import { getData } from '../utils/api';
+import { getData, getMineRecommend } from '../utils/api';
 
 const actions = {
   async getIndexData({ commit }) {
@@ -7,6 +7,13 @@ const actions = {
       commit('getIndexList', res.data.data);
     }
   },
+  // 我的页面数据
+  async getMineRecommend({ commit }) {
+    const res = await getMineRecommend();
+    commit('getMineRecommend', res.data);
+    console.log(res);
+  },
+
 };
 
 export default actions;

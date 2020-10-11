@@ -6,6 +6,9 @@ const mutations = {
   changeCity(state, payload) {
     state.city.name = payload.name;
   },
+  getMineRecommend(state, payload) {
+    state.mineRecommend = payload;
+  },
 };
 
 export default mutations;

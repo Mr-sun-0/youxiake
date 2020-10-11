@@ -18,6 +18,8 @@ import {
   CellGroup,
   List,
   ShareSheet,
+  PullRefresh,
+  Popup,
 
 } from 'vant';
 import Vue from 'vue';
@@ -50,6 +52,8 @@ Vue.use(NavBar);
 Vue.use(Cell);
 Vue.use(CellGroup);
 Vue.use(ShareSheet);
+Vue.use(PullRefresh);
+Vue.use(Popup);
 
 new Vue({
   router,

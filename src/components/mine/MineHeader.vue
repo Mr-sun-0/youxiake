@@ -71,7 +71,7 @@
 
         >
           <div class="recommend">
-            <li v-for="(item,index) in mineRecommend.data" :key="index">
+            <li v-for="(item,index) in mineRecommend" :key="index">
                 <img :src="item.img" alt="">
                 <span class="describe">{{item.name}}</span>
                 <span class="price">￥{{item.minprice}}起</span>
@@ -98,7 +98,7 @@ import icon11 from '@/assets/icon/mine/icon11@2x.png';
 import icon12 from '@/assets/icon/mine/icon12@2x.png';
 
 export default {
-  props: ['mineRecommend'],
+  // props: ['mineRecommend'],
   data() {
     return {
       loading: false,
@@ -186,7 +186,14 @@ export default {
     toPerson() {
       this.$router.push('/person');
     },
+
   },
+  computed: {
+    mineRecommend() {
+      return this.$store.state.mineRecommend.data;
+    },
+  },
+
 };
 </script>
 <style lang="less" scoped>

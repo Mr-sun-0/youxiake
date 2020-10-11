@@ -3,6 +3,7 @@ import http from './http';
 export function getData() {
   return http.get('/api/index/part?sitecode=1&city_id=1&refreshCount=60');
 }
+// 我的页面接口
 export function getMineRecommend() {
   return http.get('/api/lines/userrecommends');
 }
