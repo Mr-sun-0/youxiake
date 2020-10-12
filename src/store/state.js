@@ -8,6 +8,7 @@ const state = {
   page: 1,
   status: 0,
   flowData: [],
+  mineRecommend: [],
   registerList: [],
 };
 

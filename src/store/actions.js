@@ -1,6 +1,6 @@
 import { Toast } from 'vant';
 import {
-  getData, getCode, login, getFlow,
+  getData, getCode, login, getFlow, getMineRecommend, login,
 } from '../utils/api';
 
 const actions = {
@@ -16,6 +16,13 @@ const actions = {
       commit('changFlow', res.data.data.list);
     }
   },
+  // 我的页面数据
+  async getMineRecommend({ commit }) {
+    const res = await getMineRecommend();
+    commit('getMineRecommend', res.data);
+    console.log(res);
+  },
+
   async getCode(context, payload) {
     const res = await getCode({
       phone: payload,

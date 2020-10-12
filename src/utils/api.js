@@ -4,11 +4,15 @@ import http from './http';
 export function getData() {
   return http.get('/api/index/part?sitecode=1&city_id=1&refreshCount=60');
 }
+<<<<<<< HEAD
 
 export function getFlow(params) {
   return http.get('/api/index/flowrecommend?sitecode=1&city_id=1&type=1&page=1', params);
 }
 
+=======
+// 我的页面接口
+>>>>>>> susasa
 export function getMineRecommend() {
   return http.get('/api/lines/userrecommends');
 }

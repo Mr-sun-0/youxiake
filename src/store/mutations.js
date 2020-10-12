@@ -8,9 +8,9 @@ const mutations = {
     state.city.name = payload;
   },
   login(state, payload) {
-    if (payload.status === '0') {
-      state.registerList = payload.result;
-    }
+    // if (payload.status === '0') {
+    state.registerList = payload.result;
+    // }
   },
   changFlow(state, payload) {
     if (state.status === 0) {
@@ -28,6 +28,10 @@ const mutations = {
     state.page = payload;
     state.status = 1;
   },
+  getMineRecommend(state, payload) {
+    state.mineRecommend = payload;
+  },
+
 };
 
 export default mutations;

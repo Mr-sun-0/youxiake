@@ -12,8 +12,8 @@ module.exports = {
     },
   },
   // overlay: {
-  //   warnings: false,
-  //   errors: false,
+  //     warnings: false,
+  //     errors: false,
   // },
   // lintOnSave: false,
 };
