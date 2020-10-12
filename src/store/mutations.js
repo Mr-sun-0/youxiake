@@ -4,7 +4,13 @@ const mutations = {
     state.weekList = payload.aroundLump.weekList;
   },
   changeCity(state, payload) {
-    state.city.name = payload.name;
+    console.log(payload);
+    state.city.name = payload;
+  },
+  login(state, payload) {
+    if (payload.status === '0') {
+      state.registerList = payload.result;
+    }
   },
   getMineRecommend(state, payload) {
     state.mineRecommend = payload;

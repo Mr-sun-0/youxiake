@@ -1,26 +1,26 @@
 import {
-  Search,
-  Lazyload,
-  Swipe,
-  SwipeItem,
-  Grid,
-  GridItem,
-  Image as VanImage,
-  Icon,
-  Tabbar,
-  TabbarItem,
-  Tab,
-  Tabs,
-  Field,
-  Button,
-  NavBar,
-  Cell,
-  CellGroup,
-  List,
-  ShareSheet,
-  PullRefresh,
-  Popup,
-  Switch,
+    Search,
+    Lazyload,
+    Swipe,
+    SwipeItem,
+    Grid,
+    GridItem,
+    Image as VanImage,
+    Icon,
+    Tabbar,
+    TabbarItem,
+    Tab,
+    Tabs,
+    Field,
+    Button,
+    NavBar,
+    Cell,
+    CellGroup,
+    List,
+    ShareSheet,
+    PullRefresh,
+    Popup,
+    Switch,
 
 } from 'vant';
 import Vue from 'vue';
@@ -58,7 +58,13 @@ Vue.use(PullRefresh);
 Vue.use(Popup);
 
 new Vue({
-  router,
-  store,
-  render: (h) => h(App),
+    router,
+    store,
+    render: (h) => h(App),
 }).$mount('#app');
+
+Vue.use(Lazyload, {
+    lazyComponent: true,
+    loading: '../src/assets/logo.png',
+    preload: '0px',
+});

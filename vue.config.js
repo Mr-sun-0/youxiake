@@ -1,16 +1,16 @@
 module.exports = {
-  devServer: {
-    proxy: {
-      '/api': {
-        target: 'https://m.youxiake.com',
-        ws: true,
-        changeOrigin: true,
-      },
+    devServer: {
+        proxy: {
+            '/api': {
+                target: 'https://m.youxiake.com',
+                ws: true,
+                changeOrigin: true,
+            },
+        },
     },
-  },
-  // overlay: {
-  //     warnings: false,
-  //     errors: false,
-  // },
-  // lintOnSave: false,
+    // overlay: {
+    //     warnings: false,
+    //     errors: false,
+    // },
+    // lintOnSave: false,
 };
