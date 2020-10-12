@@ -4,7 +4,8 @@ const mutations = {
     state.weekList = payload.aroundLump.weekList;
   },
   changeCity(state, payload) {
-    state.city.name = payload.name;
+    console.log(payload);
+    state.city.name = payload;
   },
 };
 

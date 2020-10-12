@@ -13,25 +13,28 @@
                 <p>雨</p>
                 <span>20℃</span>
             </div>
-            <div class="photo"><p>摄影</p></div>
+            <div class="photo"
+            @click="toPhoto"
+            ><p>摄影</p></div>
         </div>
     </div>
 </template>
 <script>
 export default {
   data() {
-    return {
-      city: '杭州',
-    };
+    return {};
   },
   computed: {
-    // city() {
-    //   return this.state.city.name;
-    // },
+    city() {
+      return this.$store.state.city.name;
+    },
   },
   methods: {
     changeCity() {
       this.$router.push('/cities');
+    },
+    toPhoto() {
+      this.$router.push('/photography');
     },
   },
 };
