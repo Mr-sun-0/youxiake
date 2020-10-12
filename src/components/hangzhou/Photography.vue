@@ -3,9 +3,13 @@
         <van-nav-bar
         title="杭州相关图片">
             <template #left>
-                <span @click="back">X</span>
+                <van-icon name="cross" @click="back"/>
             </template>
         </van-nav-bar>
+        <van-tabs v-model="active">
+          <van-tab title="摄影作品">作品</van-tab>
+          <van-tab title="游记图片">游记</van-tab>
+      </van-tabs>
     </div>
 </template>
 <script>
@@ -32,11 +36,12 @@ export default {
     left: 0;
     min-height: 812px;
     .van-nav-bar{
-        font-weight: 600;
-    }
-    .van-nav-bar__title{
-        font-weight: 600;
-        color: red;
+        .van-icon-cross{
+          font-weight: 600;
+        }
+        .van-nav-bar__title{
+          font-weight: 600;
+        }
     }
 }
 </style>

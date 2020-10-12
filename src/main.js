@@ -28,7 +28,8 @@ import 'amfe-flexible';
 
 // 引入reset文件
 import './assets/css/reset.less';
-import './assets/css/cities.css';
+import './assets/css/cities.css';// 解决杨师傅该问题
+import './assets/css/photography.css';// 解决样式覆盖问题
 
 Vue.config.productionTip = false;
 Vue.use(List);
