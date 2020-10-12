@@ -1,16 +1,29 @@
 <template>
-    <div>
-        <h4>小众种草</h4>
+    <div class="minority-wrap">
+        <h3>{{$store.state.dataList.minority.title}}
+            <span>{{$store.state.dataList.minority.subTitle}}</span>
+        </h3>
         <section>
             <article v-for="(item,index) in $store.state.dataList.minority" :key="index">
-                <img src="item.image" >
+                <img :src="item.image" >
             </article>
         </section>
     </div>
 </template>
 
 <style lang="less" scoped>
-    section{
+    .minority-wrap{
+        margin-top: 10px;
+        background: white;
+        h3{
+            span{
+                background: pink;
+                font-size: 15px;
+                border-radius: 10px;
+                vertical-align: middle;
+            }
+        }
+        section{
         display: flex ;
         overflow: auto;
         &::-webkit-scrollbar{
@@ -19,6 +32,8 @@
         article{
             width: 30vw;
             flex-shrink: 0;
+            margin: 0 10px;
         }
+    }
     }
 </style>
