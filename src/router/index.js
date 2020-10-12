@@ -72,6 +72,10 @@ const routes = [{
   component: () => import('../components/mine/Message.vue'),
 },
 {
+  path: '/photography',
+  component: () => import('../components/hangzhou/Photography.vue'),
+},
+{
   path: '*',
   component: () => import('../views/404.vue'),
 },
