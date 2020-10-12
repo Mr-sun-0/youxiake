@@ -5,6 +5,9 @@ module.exports = {
         target: 'https://m.youxiake.com',
         ws: true,
         changeOrigin: true,
+        headers: {
+          Referer: 'https://m.youxiake.com/',
+        },
       },
     },
   },
