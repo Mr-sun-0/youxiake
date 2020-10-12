@@ -1,8 +1,8 @@
 <template>
     <div class="content-wrap">
-        <van-tabs type='line' border='true' @click="handleClick(item.type)" sticky >
+        <van-tabs type='line' border='true' @click="handleClick()" sticky >
                 <van-tab v-for="(item,index) in $store.state.dataList.flowTabList"
-            :key="index" :title="item.typeName" >
+            :key="index" :title="item.typeName" :tabType="item.type" ref="tabChild" >
                 <section v-for="(value,num) in $store.state.flowData"
                 :key="'flow'+num">
                     <img src="value.dataDetail.image"
@@ -19,9 +19,8 @@ export default {
     this.$store.dispatch('getflowData');
   },
   methods: {
-    handleClick(item) {
-      console.log(item);
-      this.$store.commit('typeChange', item);
+    handleClick() {
+      this.$store.commit('typeChange', this.$refs.tabChild.tabType);
     },
   },
   watch: {
