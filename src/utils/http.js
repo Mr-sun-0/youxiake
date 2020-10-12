@@ -1,4 +1,5 @@
 import axios from 'axios';
+import qs from 'qs';
 import { Toast } from 'vant';
 
 // 创建axios实例
@@ -21,9 +22,9 @@ const http = {
         });
     });
   },
-  post(url) {
+  post(url, data) {
     return new Promise((resolve, reject) => {
-      instance.post(url)
+      instance.post(url, qs.stringify(data))
         .then((response) => {
           // console.log(response);
           resolve(response.data);

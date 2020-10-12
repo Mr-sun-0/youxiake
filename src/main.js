@@ -18,6 +18,7 @@ import {
   CellGroup,
   List,
   ShareSheet,
+  PullRefresh,
 
 } from 'vant';
 import Vue from 'vue';
@@ -51,9 +52,16 @@ Vue.use(NavBar);
 Vue.use(Cell);
 Vue.use(CellGroup);
 Vue.use(ShareSheet);
+Vue.use(PullRefresh);
 
 new Vue({
   router,
   store,
   render: (h) => h(App),
 }).$mount('#app');
+
+Vue.use(Lazyload, {
+  lazyComponent: true,
+  loading: '../src/assets/logo.png',
+  preload: '0px',
+});

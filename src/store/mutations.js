@@ -7,6 +7,11 @@ const mutations = {
     console.log(payload);
     state.city.name = payload;
   },
+  login(state, payload) {
+    if (payload.status === '0') {
+      state.registerList = payload.result;
+    }
+  },
 };
 
 export default mutations;

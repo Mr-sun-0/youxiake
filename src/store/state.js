@@ -4,6 +4,7 @@ const state = {
   city: {
     name: '北京',
   },
+  registerList: [],
 };
 
 export default state;

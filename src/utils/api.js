@@ -16,3 +16,11 @@ export function getMineRecommend() {
 export function getRecommend(data) {
   return http.post('/home/recommend', data);
 }
+// 获取短信验证码
+export function getCode(data) {
+  return http.post('http://www.pudge.wang:3001/register/getCode', data);
+}
+// 登入状态
+export function login(data) {
+  return http.post('http://www.pudge.wang:3001/register', data);
+}
