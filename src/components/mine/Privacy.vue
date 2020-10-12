@@ -9,15 +9,22 @@
             <van-cell title="已开启新通知">
             </van-cell>
 
-            <van-cell title="显示活动报名">
+            <van-cell title="显示活动报名" center>
+                <template #right-icon>
+                    <van-switch v-model="checked1" size="24px" active-color="#07c160"/>
+                </template>
             </van-cell>
-            <van-cell title="允许他人通过报名名单查看个人信息">
-                  <van-switch v-model="checked" size="24px"/>
-            </van-cell>
-            <van-cell title="允许评价内容被推荐后同步至我的遇见">
-                  <van-switch v-model="checked" size="24px"/>
-            </van-cell>
+            <van-cell title="允许他人通过报名名单查看个人信息" center>
+                 <template #right-icon>
+                     <van-switch v-model="checked2" size="24px" active-color="#07c160"/>
+                </template>
 
+            </van-cell>
+            <van-cell title="允许评价内容被推荐后同步至我的遇见" center>
+                    <template #right-icon>
+                     <van-switch v-model="checked3" size="24px" active-color="#07c160"/>
+                </template>
+            </van-cell>
         </van-cell-group>
     </div>
 </template>
@@ -25,7 +32,9 @@
 export default {
   data() {
     return {
-      checked: true,
+      checked1: true,
+      checked2: true,
+      checked3: true,
     };
   },
   methods: {

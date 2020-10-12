@@ -1,9 +1,7 @@
-<<<<<<< HEAD
-import { getData, getMineRecommend } from '../utils/api';
-=======
 import { Toast } from 'vant';
-import { getData, getCode, login } from '../utils/api';
->>>>>>> master
+import {
+  getData, getMineRecommend, getCode, login,
+} from '../utils/api';
 
 const actions = {
   async getIndexData({ commit }) {
@@ -12,7 +10,6 @@ const actions = {
       commit('getIndexList', res.data.data);
     }
   },
-<<<<<<< HEAD
   // 我的页面数据
   async getMineRecommend({ commit }) {
     const res = await getMineRecommend();
@@ -20,7 +17,6 @@ const actions = {
     console.log(res);
   },
 
-=======
   async getCode(context, payload) {
     const res = await getCode({
       phone: payload,
@@ -35,7 +31,6 @@ const actions = {
     Toast(res.msg);
     commit('login', res);
   },
->>>>>>> master
 };
 
 export default actions;

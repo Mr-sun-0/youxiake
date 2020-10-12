@@ -30,6 +30,7 @@ export default {
     },
     quit() {
       this.$router.push('/mine');
+      sessionStorage.clear();
     },
     update() {
       Toast('已是最新版本');

@@ -4,11 +4,8 @@ const state = {
   city: {
     name: '北京',
   },
-<<<<<<< HEAD
   mineRecommend: [],
-=======
   registerList: [],
->>>>>>> master
 };
 
 export default state;

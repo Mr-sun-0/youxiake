@@ -6,11 +6,11 @@
         @click-left="onClickLeft"
         />
         <van-cell-group>
-            <van-cell title="手机号" is-link  />
-            <van-cell title="邮箱号" is-link />
-            <van-cell title="微信" is-link />
-            <van-cell title="QQ" />
-            <van-cell title="微博" is-link />
+            <van-cell title="手机号" is-link value='' />
+            <van-cell title="邮箱号" is-link value='未绑定'/>
+            <van-cell title="微信" is-link value='未绑定'/>
+            <van-cell title="QQ" is-link value='未绑定'/>
+            <van-cell title="微博" is-link value='未绑定'/>
             <van-cell title="修改密码" is-link  />
             <van-cell title="账号注销" is-link />
         </van-cell-group>
