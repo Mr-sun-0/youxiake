@@ -123,7 +123,7 @@ export default {
   methods: {
     onClickLeft() {
       //   console.log(1);
-      this.$router.go(-1);
+      this.$router.push('/mine');
     },
     onClickRight() {
       this.showShare = true;

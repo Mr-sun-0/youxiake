@@ -6,7 +6,7 @@ export function getData() {
 }
 // 我的页面接口
 export function getMineRecommend() {
-  return http.get('/api/lines/userrecommends');
+  return http.post('https://www.fastmock.site/mock/b4d7d83661a384a503ae466c316a0080/youxiake/mine/recommend');
 }
 // 城市列表接口
 // export function getCitiesList() {

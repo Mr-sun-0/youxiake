@@ -82,7 +82,7 @@
 
         >
           <div class="recommend">
-            <li v-for="(item,index) in mineRecommend" :key="index">
+            <li v-for="(item,index) in mineRecommend.data" :key="index">
                 <img :src="item.img" alt="">
                 <span class="describe">{{item.name}}</span>
                 <span class="price">￥{{item.minprice}}起</span>
@@ -186,6 +186,7 @@ export default {
   },
   mounted() {
     this.sessionlist();
+    this.getMineRecommend();
   },
   methods: {
     toSetting() {
@@ -208,11 +209,14 @@ export default {
       this.session = JSON.parse(sessionStorage.getItem('res'));
       console.log(this.session);
     },
+    getMineRecommend() {
+      this.$store.dispatch('getMineRecommend');
+    },
 
   },
   computed: {
     mineRecommend() {
-      return this.$store.state.mineRecommend.data;
+      return this.$store.state.mineRecommend;
     },
   },
 
@@ -316,8 +320,8 @@ export default {
         justify-content: center;
         align-items: center;
          img{
-                 width: 40px;
-                 height: 40px;
+                 width: 35px;
+                 height: 35px;
              }
         span{
             margin-top: 10px;
