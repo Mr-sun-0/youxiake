@@ -1,6 +1,6 @@
 import { Toast } from 'vant';
 import {
-  getData, getCode, login, getFlow, getMineRecommend, login,
+  getData, getCode, login, getFlow, getMineRecommend,
 } from '../utils/api';
 
 const actions = {
