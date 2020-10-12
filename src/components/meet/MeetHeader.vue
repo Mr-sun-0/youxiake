@@ -6,23 +6,28 @@
                 <a href="">
                    <img class="fangdajing" src="../../assets/icon/meet/fangdajing@2x.png" alt="">
                 </a>
-                <input type="text" placeholder="夏日海岛推荐">
+                <input type="text" :placeholder="msg">
             </div>
             <ul class="nav">
                 <a href="">
-                    <li class="li1">关注</li>
+                    <li class="li1">{{ list[0] }}</li>
                 </a>
                 <a href="">
-                    <li class="li2">
-                        <span>发现</span>
-                        <div class="line"></div>
-                    </li>
+                    <router-link to="shouye">
+                        <li class="li2">
+                            <span>发现</span>
+                            <div class="line"></div>
+                        </li>
+                    </router-link>
                 </a>
                 <a href="">
-                    <li class="li3">
-                        <img class="icon2" src="../../assets/icon/meet/jingxuan@2x.png" alt="">
-                        <span>精选</span>
-                    </li>
+                    <router-link to="jingxuan">
+                        <li class="li3">
+                            <img class="icon2" src="../../assets/icon/meet/jingxuan@2x.png" alt="">
+                            <span>精选</span>
+                            <div class="line"></div>
+                        </li>
+                    </router-link>
                 </a>
                 <a href="">
                     <li>短视频</li>
@@ -31,6 +36,18 @@
         </div>
     </div>
 </template>
+
+<script>
+
+export default {
+  data() {
+    return {
+      msg: '夏日海岛推荐',
+      list: ['关注', '发现', '精选', '短视频'],
+    };
+  },
+};
+</script>
 
 <style lang="less" scoped>
 .meet{
@@ -86,7 +103,7 @@
                 margin-right: 20px;
                 font-family: "方正黑体";
             }
-            .li2{
+            :hover .li2{
                 font-weight: 900;
                 .line{
                     width: 20px;
@@ -96,12 +113,33 @@
                     margin-left: 5px;
                 }
             }
+            .li2{
+                font-weight: normal;
+                // .line{
+                //     width: 20px;
+                //     height: 2px;
+                //     background: black;
+                //     margin-top: 3px;
+                //     margin-left: 5px;
+                // }
+            }
             .li3{
+                font-weight: normal;
                 .icon2{
                     width: 16px;
                     height: 16px;
                     vertical-align: middle;
                     margin-bottom: 2px;
+                }
+            }
+            :hover .li3{
+                font-weight: 900;
+                .line{
+                    width: 20px;
+                    height: 2px;
+                    background: black;
+                    margin-top: 3px;
+                    margin-left: 21px;
                 }
             }
         }
