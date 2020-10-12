@@ -2,7 +2,9 @@
     <div>
         <div class="loop" v-for="(item,index) in list"  :key="index">
             <span>{{item.title}}</span>
-            <img :src="item.imgurl" alt="">
+            <!-- <lazy-component> -->
+            <img :src="item.imgurl" alt="" v-lazy="item.imgurl">
+            <!-- </lazy-component> -->
             <div class="gl" v-if="index == 0">攻略</div>
             <div class="gl gl2" v-if="index == 1">涠洲岛</div>
             <div class="gl gl3" v-if="index == 1">攻略</div>
