@@ -9,7 +9,7 @@
         </div>
         <section class="sec">
             <ul class="four-icon">
-                 <li v-for="(item,index) in list" :key="index">
+                 <li v-for="(item,index) in list" :key="index" @click="totarget(index)">
                      <span>{{item.title}}</span>
                      <img :src="item.imgurl"  alt="">
                  </li>
@@ -31,6 +31,21 @@ export default {
         { title: '视频', imgurl: require('../../assets/images/community/youji-icon02.png') },
       ],
     };
+  },
+
+  methods: {
+    totarget(i) {
+      switch (i) {
+        case 0:
+          this.$router.push('/index');
+          break;
+        case 1:
+          this.$router.push('/index');
+          break;
+        default:
+          break;
+      }
+    },
   },
 };
 </script>
