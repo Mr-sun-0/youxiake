@@ -11,6 +11,12 @@ const routes = [{
 {
   path: '/index',
   component: () => import('../views/Index.vue'),
+  children: [
+    {
+      path: '/index/country',
+      component: () => import('../views/index/CountryTravel.vue'),
+    },
+  ],
 },
 {
   path: '/mine',
