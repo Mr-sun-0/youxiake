@@ -13,6 +13,7 @@ module.exports = {
   },
   // overlay: {
   //   warnings: false,
-  //   errors: true,
-  // },// lintOnSave: false,
+  //   errors: false,
+  // },
+  // lintOnSave: false,
 };

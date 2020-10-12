@@ -21,7 +21,6 @@ export default {
 <style lang="less" scoped>
 .bot{
     width: 100%;
-    height: 300px;
     position: relative;
     top: -35px;
     border-radius: 6px;

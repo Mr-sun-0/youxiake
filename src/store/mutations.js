@@ -4,13 +4,29 @@ const mutations = {
     state.weekList = payload.aroundLump.weekList;
   },
   changeCity(state, payload) {
-    state.city.name = payload.name;
+    console.log(payload);
+    state.city.name = payload;
+  },
+  login(state, payload) {
+    if (payload.status === '0') {
+      state.registerList = payload.result;
+    }
   },
   changFlow(state, payload) {
-    state.flowData = payload;
+    if (state.status === 0) {
+      state.flowData = payload;
+    } else {
+      state.flowData.push(...payload);
+      // state.flowDate = state.flowData.concat(payload);
+    }
   },
   typeChange(state, payload) {
     state.type = payload;
+    state.status = 0;
+  },
+  pageChange(state, payload) {
+    state.page = payload;
+    state.status = 1;
   },
 };
 

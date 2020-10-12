@@ -1,4 +1,7 @@
-import { getData, getFlow } from '../utils/api';
+import { Toast } from 'vant';
+import {
+  getData, getCode, login, getFlow,
+} from '../utils/api';
 
 const actions = {
   async getIndexData({ commit }) {
@@ -8,10 +11,24 @@ const actions = {
     }
   },
   async getflowData({ commit, state }) {
-    const res = await getFlow({ type: state.type });
+    const res = await getFlow({ type: state.type, page: state.page });
     if (res.data.msg === 'Succ') {
       commit('changFlow', res.data.data.list);
     }
+  },
+  async getCode(context, payload) {
+    const res = await getCode({
+      phone: payload,
+      templateId: '537707',
+    });
+    console.log(res);
+    Toast('已发送验证码');
+  },
+  async login({ commit }, payload) {
+    const res = await login(payload);
+    console.log(res);
+    Toast(res.msg);
+    commit('login', res);
   },
 };
 
