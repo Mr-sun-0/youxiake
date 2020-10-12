@@ -5,7 +5,7 @@
                     <van-swipe :autoplay="3000" indicator-color="black">
                         <van-swipe-item
                         v-for="(value, num) in $store.state.dataList.saleProductList" :key="num">
-                            <img src="value.image" />
+                            <img class="img" :src="value.image" />
                         </van-swipe-item>
                     </van-swipe>
                 </article>
@@ -36,6 +36,10 @@
                 background: pink;
                 padding: 5px;
                 height: 200px
+            }
+            .img{
+                width: 155px;
+                height: 143px;
             }
         }
         .grid-down{

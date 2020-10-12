@@ -21,6 +21,6 @@ export default {
 <style lang="less" scoped>
 div{
   padding-bottom: 50px;
-  background-color: #ccc;
+  background-color:  #F8F9F4;;
 }
 </style>

@@ -11,14 +11,25 @@
 
       </div>
       <div class="top">
-        <van-image
+         <van-image
           round
           width="1.2rem"
           height="1.2rem"
-          src="https://img.yzcdn.cn/vant/cat.jpeg"
+          :src="session.avatarImg"
+           v-if="session.avatarImg"
         />
-        <span @click="toRegister">点击登录/注册</span>
-        <p>个人主页</p>
+         <van-image
+          round
+          width="1.2rem"
+          height="1.2rem"
+           src="https://img.yzcdn.cn/vant/cat.jpeg"
+           v-else
+        />
+
+        <span v-if="session.nickName">{{session.nickName}}</span>
+        <span @click="toRegister" v-else >点击登录/注册</span>
+
+        <p @click="toPerson">个人主页</p>
       </div>
       <ul class="headbottom">
         <li v-for="(item, index) in headList" :key="index">
@@ -71,17 +82,16 @@
 
         >
           <div class="recommend">
-            <li v-for="(item,index) in mineRecommend.data" :key="index">
+            <li v-for="(item,index) in mineRecommend" :key="index">
                 <img :src="item.img" alt="">
                 <span class="describe">{{item.name}}</span>
-                <span class="price">￥{{item.minprice}}</span>
+                <span class="price">￥{{item.minprice}}起</span>
             </li>
           </div>
 
         </van-list>
 
     </div>
-
   </div>
 </template>
 <script>
@@ -99,11 +109,12 @@ import icon11 from '@/assets/icon/mine/icon11@2x.png';
 import icon12 from '@/assets/icon/mine/icon12@2x.png';
 
 export default {
-  props: ['mineRecommend'],
+  // props: ['mineRecommend'],
   data() {
     return {
       loading: false,
       finished: false,
+      session: [],
       headList: [
         {
           count: 0,
@@ -173,7 +184,9 @@ export default {
       ],
     };
   },
-
+  mounted() {
+    this.sessionlist();
+  },
   methods: {
     toSetting() {
       this.$router.push('/setting');
@@ -184,7 +197,25 @@ export default {
     toMessage() {
       this.$router.push('/message');
     },
+    toPerson() {
+      if (sessionStorage.getItem('token')) {
+        this.$router.push('/person');
+      } else {
+        this.$router.push('/register');
+      }
+    },
+    sessionlist() {
+      this.session = JSON.parse(sessionStorage.getItem('res'));
+      console.log(this.session);
+    },
+
   },
+  computed: {
+    mineRecommend() {
+      return this.$store.state.mineRecommend.data;
+    },
+  },
+
 };
 </script>
 <style lang="less" scoped>

@@ -1,24 +1,39 @@
 <template>
-    <mine-header :mineRecommend="mineRecommend"/>
+    <div>
+
+    <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
+        <mine-header/>
+    </van-pull-refresh>
+    </div>
 </template>
 <script>
 import MineHeader from '@/components/mine/MineHeader.vue';
-import { getMineRecommend } from '../utils/api';
+import { Toast } from 'vant';
 
 export default {
   data() {
     return {
-      mineRecommend: [],
+      isLoading: false,
     };
   },
   components: {
     MineHeader,
   },
   mounted() {
-    getMineRecommend().then(((res) => {
-      console.log(res.data);
-      this.mineRecommend = res.data;
-    }));
+    this.getMineRecommend();
   },
+
+  methods: {
+    getMineRecommend() {
+      this.$store.dispatch('getMineRecommend');
+    },
+    onRefresh() {
+      setTimeout(() => {
+        Toast('刷新成功');
+        this.isLoading = false;
+      }, 1000);
+    },
+  },
+
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="message">
         <van-nav-bar
         title="消息"
         left-arrow
@@ -67,7 +67,16 @@ export default {
   },
 };
 </script>
-<style lang="less">
+<style lang="less" scoped>
+.message{
+  position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 99;
+}
     p{
         display: flex;
         padding: 20px;
