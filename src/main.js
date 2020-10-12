@@ -20,6 +20,7 @@ import {
   ShareSheet,
   PullRefresh,
   Popup,
+  Switch,
 
 } from 'vant';
 import Vue from 'vue';
@@ -33,6 +34,7 @@ import './assets/css/reset.less';
 import './assets/css/cities.css';
 
 Vue.config.productionTip = false;
+Vue.use(Switch);
 Vue.use(List);
 Vue.use(Button);
 Vue.use(Field);

@@ -59,10 +59,29 @@ const routes = [{
 {
   path: '/setting',
   component: () => import('../components/mine/Setting.vue'),
+  children: [{
+    path: '/security',
+    component: () => import('../components/mine/Security.vue'),
+  },
+  {
+    path: '/privacy',
+    component: () => import('../components/mine/Privacy.vue'),
+  },
+  {
+    path: '/about',
+    component: () => import('../components/mine/About.vue'),
+  },
+  {
+    path: '/agree',
+    component: () => import('../components/mine/Agree.vue'),
+  },
+
+  ],
 },
 {
   path: '/message',
   component: () => import('../components/mine/Message.vue'),
+
 },
 {
   path: '/person',
