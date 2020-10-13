@@ -4,7 +4,7 @@
             <span>{{$store.state.dataList.minority.subTitle}}</span>
         </h3>
         <section>
-            <article v-for="(item,index) in $store.state.dataList.minority" :key="index">
+            <article v-for="(item,index) in $store.state.dataList.minority.data" :key="index">
                 <img :src="item.image" >
             </article>
         </section>
@@ -33,6 +33,9 @@
             width: 30vw;
             flex-shrink: 0;
             margin: 0 10px;
+            img{
+                height: 152px;
+            }
         }
     }
     }
