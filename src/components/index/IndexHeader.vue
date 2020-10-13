@@ -5,6 +5,7 @@
         v-model="value"
         shape="round"
         background="#fedb39"
+        placeholder="搜索全球小众目的地和创意玩法"
         />
         <img src="../../assets/images/index/saosao.png">
     </div>
@@ -14,7 +15,7 @@
 export default {
   data() {
     return {
-      value: '搜索全球小众目的地和创意玩法',
+      value: null,
     };
   },
 };

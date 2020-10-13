@@ -9,6 +9,14 @@ module.exports = {
           Referer: 'https://m.youxiake.com/',
         },
       },
+      // '/image/':{
+      //   target: 'https://m.youxiake.com',
+      //   ws: true,
+      //   changeOrigin: true,
+      //   headers: {
+      //     Referer: 'https://m.youxiake.com/',
+      //   },
+      // }
     },
   },
   // overlay: {

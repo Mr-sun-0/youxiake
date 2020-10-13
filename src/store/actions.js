@@ -1,6 +1,10 @@
 import { Toast } from 'vant';
 import {
-  getData, getCode, login, getFlow, getMineRecommend,
+  getData,
+  getMineRecommend,
+  getCode,
+  login,
+  getFlow,
 } from '../utils/api';
 
 const actions = {
@@ -20,7 +24,6 @@ const actions = {
   async getMineRecommend({ commit }) {
     const res = await getMineRecommend();
     commit('getMineRecommend', res.data);
-    console.log(res);
   },
 
   async getCode(context, payload) {

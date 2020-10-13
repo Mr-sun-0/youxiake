@@ -16,26 +16,26 @@
         @select="onSelect"
       />
       <div class="topcontent">
+         <van-image
+          round
+          width="1.2rem"
+          height="1.2rem"
+          src="https://img.yzcdn.cn/vant/cat.jpeg"
+          v-if="!session"
+        />
         <van-image
           round
           width="1.2rem"
           height="1.2rem"
           :src="session.avatarImg"
-          v-if="session.avatarImg"
-        />
-        <van-image
-          round
-          width="1.2rem"
-          height="1.2rem"
-          src="https://img.yzcdn.cn/vant/cat.jpeg"
           v-else
-        />
+          />
         <span>编辑</span>
       </div>
       <p>
         <span
           ><b>昵称:</b
-          ><span style="font-size=18px;font-weight=700">{{
+          ><span style="font-size=14px;font-weight=700">{{
             session.nickName
           }}</span></span
         >
@@ -50,16 +50,16 @@
         >
       </p>
       <p class="p1">
-        <span>关注0</span>
-        <span>粉丝0</span>
-        <span>获赞0</span>
+        <span>关注     <b>0</b></span>
+        <span>粉丝     <b>0</b></span>
+        <span>获赞     <b>0</b></span>
       </p>
     </div>
     <ul>
       <li
         v-for="(item, index) in list"
         :key="index"
-        :class="{ active: activeIndex == index }"
+        :class="{ active: activeIndex ==index }"
         @click="tabsChange(index, item.url)"
       >
         {{ item.title }}
@@ -68,7 +68,7 @@
     </ul>
     <router-view></router-view>
     <div class="publish">
-      <!-- <van-cell is-link @click="showPopup">展示弹出层</van-cell> -->
+      <!-- 展示弹出层< -->
       <p @click="showPopup">+ 发布</p>
       <van-popup
         v-model="show"
@@ -89,7 +89,7 @@ export default {
       show: false,
       activeIndex: '',
       showShare: false,
-      session: [],
+      session: {},
       options: [
         { name: '微信', icon: 'wechat' },
         { name: '微博', icon: 'weibo' },
@@ -123,7 +123,7 @@ export default {
   methods: {
     onClickLeft() {
       //   console.log(1);
-      this.$router.go(-1);
+      this.$router.push('/mine');
     },
     onClickRight() {
       this.showShare = true;
@@ -135,9 +135,11 @@ export default {
     tabsChange(i, url) {
       this.activeIndex = i;
       this.$router.push(url);
+      // console.log(1)
     },
     showPopup() {
       this.show = true;
+      // console.log(1)
     },
     sessionlist() {
       this.session = JSON.parse(sessionStorage.getItem('res'));
@@ -152,7 +154,7 @@ export default {
   background-color: none;
 }
 .wrap {
-  height: 300px;
+  height: 250px;
   background: #fff url(../../assets/images/mine/mine-bg.png) 50% no-repeat;
   background-size: cover;
 }
@@ -162,23 +164,25 @@ export default {
   align-items: center;
   padding: 0 10px;
   margin-top: 20px;
-  font-size: 20px;
+  font-size: 16px;
 }
 p {
   padding: 0 10px;
   margin-top: 20px;
-  font-size: 20px;
+  font-size: 16px;
+
 }
 .p1 {
   span {
-    margin-right: 20px;
+    margin-right: 30px;
+    font-size: 16px;
   }
 }
 ul {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-size: 20px;
+  font-size: 16px;
   margin-top: 10px;
 
   .underLine {
@@ -205,12 +209,12 @@ ul {
   background-color: #fff;
   p {
     width: 80px;
-    height: 40px;
+    height: 30px;
     border-radius: 20px;
     background: orange;
     text-align: center;
-    line-height: 40px;
-    font-size: 20px;
+    line-height: 30px;
+    font-size: 16px;
     margin-left: 50%;
     transform: translateX(-50%);
     margin-bottom: 20px;
