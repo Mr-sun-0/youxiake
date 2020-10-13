@@ -67,10 +67,34 @@ const routes = [{
   path: '/community',
   component: () => import('../views/community.vue'),
   // meta: { needLogin: true },
-  children: [{
-    path: '/commfiv02',
-    component: () => import('../components/community/CommFiv/CommFiv02.vue'),
-  }],
+  children: [
+    {
+      path: '/commfiv02',
+      component: () => import('../components/community/CommFiv/CommFiv02.vue'),
+      children: [
+        {
+          path: '/js',
+          component: () => import('../components/community/jhandall/jh.vue'),
+        },
+        {
+          path: '/all',
+          component: () => import('../components/community/jhandall/all.vue'),
+        },
+      ],
+    },
+    {
+      path: '/commfiv03',
+      component: () => import('../components/community/CommFiv/CommFiv03.vue'),
+    },
+    {
+      path: '/commfiv04',
+      component: () => import('../components/community/CommFiv/CommFiv04.vue'),
+    },
+    {
+      path: '/commfiv05',
+      component: () => import('../components/community/CommFiv/CommFiv05.vue'),
+    },
+  ],
 },
 {
   path: '/setting',
@@ -102,7 +126,7 @@ const routes = [{
 {
   path: '/person',
   component: () => import('../components/mine/PersonPage.vue'),
-  meta: { needLogin: true },
+  // meta: { needLogin: true },
   children: [{
     path: '/',
     redirect: '/metting',
@@ -125,11 +149,6 @@ const routes = [{
   },
   ],
 },
-{
-  path: '/community',
-  component: () => import('../views/community.vue'),
-},
-
 {
   path: '/photography',
   component: () => import('../components/hangzhou/Photography.vue'),

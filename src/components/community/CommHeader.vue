@@ -1,5 +1,6 @@
 <template>
     <div class="cont">
+      <router-view></router-view>
         <div class="header-wrap">
             <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
               <van-swipe-item v-for="(item,index) in imgUrl " :key="index">
@@ -11,13 +12,16 @@
             v-model="value"
             shape="round"
             background="none"
+            placeholder="搜索目的地/攻略/摄影作品登"
+            @click="jdkjdk"
             />
         <section class="sec">
             <ul class="four-icon">
-                 <li v-for="(item,index) in list" :key="index" @click="totarget(index)">
+                 <router-link v-for="(item,index) in list" :key="index"
+                  :to="item.place" tag='li'>
                      <span>{{item.title}}</span>
                      <img :src="item.imgurl"  alt="">
-                 </li>
+                 </router-link>
             </ul>
         </section>
     </div>
@@ -27,13 +31,13 @@
 export default {
   data() {
     return {
-      value: '搜索目的地/攻略/摄影作品登',
+      value: '',
       list: [
-        { title: '目的地', imgurl: require('../../assets/images/community/-s-gl-icon03.png') },
-        { title: '游记', imgurl: require('../../assets/images/community/-s-video-icon05.png') },
-        { title: '攻略', imgurl: require('../../assets/images/community/mdd-icon01.png') },
-        { title: '摄影', imgurl: require('../../assets/images/community/sy-icon04.png') },
-        { title: '视频', imgurl: require('../../assets/images/community/youji-icon02.png') },
+        { title: '目的地', imgurl: require('../../assets/images/community/-s-gl-icon03.png'), place: '/index' },
+        { title: '游记', imgurl: require('../../assets/images/community/-s-video-icon05.png'), place: '/js' },
+        { title: '攻略', imgurl: require('../../assets/images/community/mdd-icon01.png'), place: '/commfiv03' },
+        { title: '摄影', imgurl: require('../../assets/images/community/sy-icon04.png'), place: '/commfiv04' },
+        { title: '视频', imgurl: require('../../assets/images/community/youji-icon02.png'), place: '/commfiv05' },
       ],
       imgUrl: [
         { imgurl: require('../../assets/images/community/swiper2/12581602215103.jpg') },
@@ -44,21 +48,6 @@ export default {
         { imgurl: require('../../assets/images/community/swiper2/79791589422766.jpg') },
       ],
     };
-  },
-
-  methods: {
-    totarget(i) {
-      switch (i) {
-        case 0:
-          this.$router.push('/index');
-          break;
-        case 1:
-          this.$router.push('/community/commfiv02');
-          break;
-        default:
-          break;
-      }
-    },
   },
 };
 </script>
@@ -103,11 +92,11 @@ export default {
     .van-search{
       position:fixed;
       top: 2px;
-      left: 14px;
+      left: 0.55rem;
       width: 351px;
       height: 34px;
       padding: 0.26667rem 0.32rem;
-      z-index: 10;
+      z-index: 15;
     }
     .sec{
         width: 100%;
