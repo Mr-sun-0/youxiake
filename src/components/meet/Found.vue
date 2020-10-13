@@ -10,12 +10,18 @@
             </div>
             <div
                 class="photo"
-                v-for="item in msglist"
-                :key="item"
                 :style="{ backgroundImage: 'url(' + imgurl + ')'}"
             >
                 <span>{{ msglist.msg[0] }}</span>
                 <p class="span2">{{ msglist.msg[1] }}</p>
+            </div>
+            <div class="photo2">
+                <span>{{ msglist.msg2[0] }}</span>
+                <p class="span2">{{ msglist.msg2[1] }}</p>
+            </div>
+            <div class="photo3">
+                <span>{{ msglist.msg3[0] }}</span>
+                <p class="span2">{{ msglist.msg3[1] }}</p>
             </div>
         </div>
     </div>
@@ -33,7 +39,7 @@ export default {
       imgurl: require('../../assets/images/meet/1.jpg'),
       list: ['关注', '发现', '精选', '短视频'],
       msglist: {
-        msg: ['这些景点要钱', '1238人浏览'],
+        msg: ['这些景点不要钱', '1238人浏览'],
         msg2: ['夏日海盗推荐', '541人浏览'],
         msg3: ['游侠视频集结地', '410人浏览'],
       },
@@ -89,7 +95,47 @@ export default {
             .photo{
                 width: 100px;
                 height: 76px;
-                // background: url("../../assets/images/meet/1.jpg");
+                background: url("../../assets/images/meet/1.jpg");
+                background-size: cover;
+                border-radius: 6px;
+                float: left;
+                margin-top: 10px;
+                margin-left: 20px;
+                padding: 0 13px;
+                flex-shrink: 0;
+                span{
+                    font-size: 14px;
+                    color: #ffffff;
+                }
+                p{
+                    font-size: 10px;
+                    color: #ffffff;
+                }
+            }
+            .photo2{
+                width: 100px;
+                height: 76px;
+                background: url("../../assets/images/meet/1.2.jpg");
+                background-size: cover;
+                border-radius: 6px;
+                float: left;
+                margin-top: 10px;
+                margin-left: 20px;
+                padding: 0 13px;
+                flex-shrink: 0;
+                span{
+                    font-size: 14px;
+                    color: #ffffff;
+                }
+                p{
+                    font-size: 10px;
+                    color: #ffffff;
+                }
+            }
+            .photo3{
+                width: 100px;
+                height: 76px;
+                background: url("../../assets/images/meet/1.3.jpg");
                 background-size: cover;
                 border-radius: 6px;
                 float: left;

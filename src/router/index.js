@@ -22,10 +22,6 @@ const routes = [{
   path: '/mine',
   component: () => import('../views/Mine.vue'),
 },
-// {
-//   path: '/meet',
-//   component: () => import('../views/Meet.vue'),
-// },
 {
   path: '/meet',
   component: () => import('../views/Meet.vue'),
@@ -44,14 +40,6 @@ const routes = [{
     },
   ],
 },
-// {
-//   path: '/jingxuan',
-//   component: () => import('../views/jingxuan.vue'),
-// },
-// {
-//   path: '/jing',
-//   component: () => import('../views/meet1.vue'),
-// },
 {
   path: '/hangzhou',
   component: () => import('../views/Hangzhou.vue'),

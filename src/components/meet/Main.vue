@@ -55,6 +55,10 @@
             text-align: center;
             float: left;
         }
+        :hover li{
+            font-weight: 900;
+            color: #e5ac04;
+        }
         .li1{
             border-right: 1px solid #b0b0b0;
             color: #e5ac04;

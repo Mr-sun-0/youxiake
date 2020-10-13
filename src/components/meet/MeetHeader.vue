@@ -9,18 +9,13 @@
                 <input type="text" :placeholder="msg">
             </div>
             <ul class="nav">
-                <a href="">
                     <li class="li1">{{ list[0] }}</li>
-                </a>
-                <a href="">
                     <router-link to="shouye">
                         <li class="li2">
                             <span>发现</span>
                             <div class="line"></div>
                         </li>
                     </router-link>
-                </a>
-                <a href="">
                     <router-link to="jingxuan">
                         <li class="li3">
                             <img class="icon2" src="../../assets/icon/meet/jingxuan@2x.png" alt="">
@@ -28,10 +23,7 @@
                             <div class="line"></div>
                         </li>
                     </router-link>
-                </a>
-                <a href="">
-                    <li>短视频</li>
-                </a>
+                <li>短视频</li>
             </ul>
         </div>
     </div>
@@ -99,9 +91,18 @@ export default {
             li{
                 float: left;
                 font-size: 16px;
-                // margin-top: 38px;
                 margin-right: 20px;
                 font-family: "方正黑体";
+            }
+            :hover li{
+                font-weight: 900;
+                .line{
+                    width: 20px;
+                    height: 2px;
+                    background: black;
+                    margin-top: 3px;
+                    margin-left: 5px;
+                }
             }
             :hover .li2{
                 font-weight: 900;
@@ -112,16 +113,6 @@ export default {
                     margin-top: 3px;
                     margin-left: 5px;
                 }
-            }
-            .li2{
-                font-weight: normal;
-                // .line{
-                //     width: 20px;
-                //     height: 2px;
-                //     background: black;
-                //     margin-top: 3px;
-                //     margin-left: 5px;
-                // }
             }
             .li3{
                 font-weight: normal;

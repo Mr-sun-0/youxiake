@@ -1,7 +1,7 @@
 <template>
     <div class="jingxuan">
         <ul class="tubiao">
-            <li>
+            <li class="li1">
                 <img src="../../assets/images/meet/3.png" alt="">
             </li>
             <li>
@@ -73,11 +73,17 @@
         display: inline-flex;
         margin-top: 10px;
         margin-left: 8px;
-        vertical-align: middle;
+        overflow: hidden;
+        // vertical-align: middle;
         li{
             padding: 9px;
             img{
                 width: 48px;
+            }
+        }
+        .li1{
+            img{
+                margin-top: 4px;
             }
         }
     }
