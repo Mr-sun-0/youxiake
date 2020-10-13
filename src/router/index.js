@@ -11,12 +11,10 @@ const routes = [{
 {
   path: '/index',
   component: () => import('../views/Index.vue'),
-  children: [
-    {
-      path: '/index/country',
-      component: () => import('../views/index/CountryTravel.vue'),
-    },
-  ],
+  children: [{
+    path: '/index/country',
+    component: () => import('../views/index/CountryTravel.vue'),
+  }],
 },
 {
   path: '/mine',
@@ -98,7 +96,6 @@ const routes = [{
 {
   path: '/person',
   component: () => import('../components/mine/PersonPage.vue'),
-  meta: { needLogin: true },
   children: [{
     path: '/',
     redirect: '/metting',

@@ -3,31 +3,29 @@
     <div class="headwrap">
       <div class="setting">
         <span @click="toSetting">
-          <van-icon name="setting-o" />
+          <van-icon name="setting-o" size="25" />
         </span>
         <span @click="toMessage">
-          <van-icon name="chat-o" badge="99+" />
+          <van-icon name="chat-o" badge="99+" size="25" />
         </span>
-
       </div>
       <div class="top">
-         <van-image
+        <van-image
+          round
+          width="1.2rem"
+          height="1.2rem"
+          src="https://img.yzcdn.cn/vant/cat.jpeg"
+          v-if="!session"
+        />
+        <van-image
           round
           width="1.2rem"
           height="1.2rem"
           :src="session.avatarImg"
-           v-if="session.avatarImg"
+          v-else
         />
-         <van-image
-          round
-          width="1.2rem"
-          height="1.2rem"
-           src="https://img.yzcdn.cn/vant/cat.jpeg"
-           v-else
-        />
-
-        <span v-if="session.nickName">{{session.nickName}}</span>
-        <span @click="toRegister" v-else >点击登录/注册</span>
+        <span v-if="session">{{ session.nickName }}</span>
+        <span @click="toRegister" v-else>点击登录/注册</span>
 
         <p @click="toPerson">个人主页</p>
       </div>
@@ -46,7 +44,7 @@
     </div>
 
     <div class="mainwrap">
-        <!-- 出行订单 -->
+      <!-- 出行订单 -->
       <div class="travel">
         <div class="travel-top">
           <span>出行订单</span>
@@ -55,42 +53,40 @@
         <div class="menu">
           <li v-for="(item, index) in travelList" :key="index">
             <img :src="item.icon" alt="" />
-            <!-- <img src="../../assets/icon/mine/icon01@2x.png" alt=""> -->
             <span>{{ item.msg }}</span>
           </li>
         </div>
       </div>
-       <div class="go">
-        <img src="../../assets/icon/mine/iconbg@2x.png" alt="" >
+      <div class="go">
+        <img src="../../assets/icon/mine/iconbg@2x.png" alt="" />
+      </div>
+      <!-- 我的服务 -->
+      <div class="myserve">
+        <span>我的服务</span>
+        <div class="menu menu1">
+          <li v-for="(item, index) in myserveList" :key="index">
+            <img :src="item.icon" alt="" />
+            <span>{{ item.msg }}</span>
+          </li>
         </div>
-        <!-- 我的服务 -->
-        <div class="myserve">
-            <span>我的服务</span>
-            <div class="menu menu1">
-                <li v-for="(item, index) in myserveList" :key="index">
-                    <img :src="item.icon" alt="" />
-                    <!-- <img src="../../assets/icon/mine/icon06@2x.png" alt=""> -->
-                    <span>{{ item.msg }}</span>
-                </li>
-            </div>
+      </div>
+      <div class="sel">精选推荐</div>
+      <van-list
+        v-model="loading"
+        :finished="finished"
+        finished-text="没有更多了"
+        @load="onLoad"
+        offset="0"
+      >
+        <div class="recommend">
+          <li v-for="(item, index) in mineRecommend" :key="index">
+            <img :src="item.img" alt="" />
+            <span class="describe">{{ item.name }}</span>
+            <span class="price">￥{{ item.minprice }}起</span>
+            <div class="line">{{item.title}}</div>
+          </li>
         </div>
-        <div class="sel">精选推荐</div>
-         <van-list
-          v-model="loading"
-          :finished="finished"
-          finished-text="没有更多了"
-
-        >
-          <div class="recommend">
-            <li v-for="(item,index) in mineRecommend.data" :key="index">
-                <img :src="item.img" alt="">
-                <span class="describe">{{item.name}}</span>
-                <span class="price">￥{{item.minprice}}起</span>
-            </li>
-          </div>
-
-        </van-list>
-
+      </van-list>
     </div>
   </div>
 </template>
@@ -107,14 +103,15 @@ import icon9 from '@/assets/icon/mine/icon09@2x.png';
 import icon10 from '@/assets/icon/mine/icon10@2x.png';
 import icon11 from '@/assets/icon/mine/icon11@2x.png';
 import icon12 from '@/assets/icon/mine/icon12@2x.png';
+import { Toast } from 'vant';
 
 export default {
-  // props: ['mineRecommend'],
   data() {
     return {
       loading: false,
       finished: false,
-      session: [],
+      session: {},
+      count: 8,
       headList: [
         {
           count: 0,
@@ -154,7 +151,6 @@ export default {
       myserveList: [
         {
           icon: icon6,
-          // icon: () => import('@/assets/icon/mine/icon06@2x.png'),
           msg: '签证订单',
         },
         {
@@ -184,6 +180,17 @@ export default {
       ],
     };
   },
+  watch: {
+    mineRecommend(val, oldVal) {
+      // console.log(val);
+      if (val.length - oldVal.length === this.count) {
+        // 等于10请求，不等于不再请求
+        this.loading = false;
+      } else {
+        this.loading = true;
+      }
+    },
+  },
   mounted() {
     this.sessionlist();
     this.getMineRecommend();
@@ -202,6 +209,7 @@ export default {
       if (sessionStorage.getItem('token')) {
         this.$router.push('/person');
       } else {
+        Toast('您还没有登陆，请先登录');
         this.$router.push('/register');
       }
     },
@@ -212,25 +220,28 @@ export default {
     getMineRecommend() {
       this.$store.dispatch('getMineRecommend');
     },
-
+    onLoad() {
+      if (this.$store.state.mineRecommend.length > 80) {
+        this.finished = true;
+      }
+    },
   },
   computed: {
     mineRecommend() {
       return this.$store.state.mineRecommend;
     },
   },
-
 };
 </script>
 <style lang="less" scoped>
-.wrap{
-    background-color: #f3f3f3;
+.wrap {
+  background-color: #f3f3f3;
 }
 .headwrap {
-//   position: relative;
+  //   position: relative;
   padding-left: 20px;
-  padding-top: 40px;
-  height: 200px;
+  padding-top: 10px;
+  height: 180px;
   background: #fff url(../../assets/images/mine/mine-bg.png) 50% no-repeat;
   background-size: cover;
 }
@@ -242,7 +253,6 @@ export default {
     margin-right: 20px;
   }
   margin-bottom: 10px;
-
 }
 .top {
   display: flex;
@@ -255,16 +265,16 @@ export default {
     color: #000;
     margin-left: 10px;
   }
-  p{
-    font-size: 18px;
+  p {
+    font-size: 14px;
     position: absolute;
     top: -5px;
     right: -5px;
     border-radius: 15px;
-    background-color: #f9f9f9
-    ;
+    line-height: 14px;
+    text-align: center;
+    background-color: #f9f9f9;
     padding: 5px;
-
   }
 }
 .headbottom {
@@ -282,16 +292,15 @@ export default {
       // font-weight: 700;
       color: #000;
     }
-    >span:first-child{
-         height: 25px;
-    }
-
-  }
-  >li:last-child p img{
-      width: 30px;
+    > span:first-child {
       height: 25px;
+      font-weight: 700;
+    }
   }
-
+  > li:last-child p img {
+    width: 30px;
+    height: 25px;
+  }
 }
 .mainwrap {
   padding: 0 10px;
@@ -299,15 +308,15 @@ export default {
   .travel {
     padding: 15px;
     margin-top: 10px;
-      background-color: #ffffff;
+    background-color: #ffffff;
     .travel-top {
       display: flex;
       justify-content: space-between;
-      span{
-           font-size: 18px;
+      span {
+        font-size: 18px;
       }
-      >span:first-child{
-          font-weight: 700;
+      > span:first-child {
+        font-weight: 700;
       }
     }
     .menu {
@@ -319,38 +328,36 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-         img{
-                 width: 35px;
-                 height: 35px;
-             }
-        span{
-            margin-top: 10px;
-             font-size: 14px;
-             display: block;
-
+        img {
+          width: 25px;
+          height: 25px;
+        }
+        span {
+          margin-top: 10px;
+          font-size: 14px;
+          display: block;
         }
       }
     }
   }
-  .go{
+  .go {
+    width: 100%;
+    height: 60px;
+    margin: 10px 0;
+    img {
       width: 100%;
-      height: 60px;
-      margin: 10px 0;
-      img{
-          width: 100%;
-          height: 100%;
-      }
+      height: 100%;
+    }
   }
-  .myserve{
-        background-color: #ffffff;
-         padding: 15px;
-         padding-top: 0;
-      span{
-        font-size: 18px;
-       font-weight: 700;
-
-      }
-      .menu {
+  .myserve {
+    background-color: #ffffff;
+    padding: 15px;
+    padding-top: 0;
+    span {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .menu {
       display: flex;
       flex-wrap: wrap;
       margin-top: 20px;
@@ -361,58 +368,74 @@ export default {
         align-items: center;
 
         width: 25%;
-         img{
-                 width: 25px;
-                 height: 25px;
-             }
-        span{
-            margin: 10px 0;
-             font-size: 14px;
-              display: block;
-
+        img {
+          width: 15px;
+          height: 15px;
+        }
+        span {
+          margin: 10px 0;
+          font-size: 14px;
+          display: block;
+          font-weight: 0;
         }
       }
     }
   }
-  .sel{
-      height: 40px;
-      text-align: center;
-      line-height: 40px;
-  }
-  .recommend{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      li{
-          width: 48%;
-          background-color: #fff;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-content: center;
-           border-radius: .07rem;
-           margin-bottom: 15px;
-          img{
-            width: 100%;
-            height: 120px;
-            border-radius: .07rem;
-          }
-          .describe{
-              display: block;
-              width: 100%;
-              overflow: hidden;
-              text-overflow: ellipsis;
-              white-space: nowrap;
-              font-size: 18px;
-              font-weight: 700px;
-              margin: 10px 0;
-          }
-          .price{
-              font-size: 16px;
-              color: orange;
-          }
-      }
+  .sel {
+    height: 40px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 40px;
   }
 
+  .recommend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    li {
+      width: 48%;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      border-radius: 0.07rem;
+      margin-bottom: 15px;
+      position: relative;
+      .line{
+        position: absolute;
+        left: 0;
+        top: 5px;
+        padding-left: .1rem;
+        padding-right: .2rem;
+        height: 20px;
+        line-height: 20px;
+        font-size: 12px;
+        color: #fff;
+        border-radius: 0 .16rem .16rem 0;
+        background: rgba(0,0,0,.5);
+      }
+      img {
+        width: 100%;
+        height: 120px;
+        border-radius: 0.07rem;
+      }
+      .describe {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 16px;
+        font-weight: 700px;
+        margin: 10px 0;
+      }
+      .price {
+        font-size: 14px;
+        color: orange;
+      }
+    }
+  }
 }
 </style>
