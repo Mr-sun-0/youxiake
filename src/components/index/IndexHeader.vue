@@ -5,6 +5,7 @@
         v-model="value"
         shape="round"
         background="#fedb39"
+        clearable=false
         placeholder="搜索全球小众目的地和创意玩法"
         />
         <img src="../../assets/images/index/saosao.png">
@@ -25,7 +26,6 @@ export default {
     .header-wrap{
         display: flex;
         justify-content: space-around;
-        width: 100%;
         align-items: center;
         span{
             height: 45px;
@@ -35,10 +35,10 @@ export default {
             font-weight: bold;
             color: #343434;
         }
-        van-search{
-            height: 96px;
+        .van-search{
             background: #FFFFFF;
             border-radius: 48px;
+            width: 250px;
         }
         img{
             width: 30px;

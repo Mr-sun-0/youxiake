@@ -17,8 +17,8 @@
                     </van-swipe>
                 </article>
                 <article class="art-right">
-                    <p>闽南美食大全</p>
-                    <p>尼泊尔徒步</p>
+                    <li>{{$store.state.dataList.kingProduct.title}}</li>
+                    <li>{{$store.state.dataList.newProduct.title}}</li>
                 </article>
         </section>
         <section class="grid-down">
@@ -50,6 +50,7 @@
                   width: 155px;
                   height: 143px;
                   margin: auto;
+                  padding: 10px;
                   h4{
                       color: white;
                   }
@@ -61,17 +62,25 @@
                     }
                     aside{
                         width: 140px;
-                        padding: 10px;
+                        height: 70px;
                     }
                   }
                 }
             .art-right{
                 background: #FFD14A;
                 width: 50%;
+                display: flex;
+                flex-direction: column;
+                padding: 5px;
+                color: white;
+                  li{
+                      flex-shrink: 0;
+                      flex-grow: 1;
+                  }
             }
         }
         .grid-down{
-          font-size: 12px;
+           font-size: 15px;
         }
     }
 </style>
