@@ -287,19 +287,26 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    line-height: 25px;
     span {
       font-size: 14px;
-      // font-weight: 700;
       color: #000;
     }
     > span:first-child {
+      font-size: 18px;
       height: 25px;
+      line-height: 25px;
       font-weight: 700;
     }
+  }
+  > li:last-child p{
+    height: 25px;
+      line-height: 25px;
   }
   > li:last-child p img {
     width: 30px;
     height: 25px;
+    margin-top: -15px;
   }
 }
 .mainwrap {

@@ -10,6 +10,7 @@ import {
 const actions = {
   async getIndexData({ commit }) {
     const res = await getData();
+    console.log(res.data);
     if (res.data.msg === 'Succ') {
       commit('getIndexList', res.data.data);
     }

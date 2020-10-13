@@ -28,8 +28,8 @@
 <style lang="less" scoped>
   .tabbar-wrap{
     img{
-      width: 27px;
-      height: 27px;
+      width: 25px;
+      height: 25px;
     }
   }
 </style>
