@@ -49,7 +49,7 @@ export default {
 
 <style lang="less" scoped>
   .index-wrap{
-    background:#ddd;
+    background:#f2f2f2;
     margin-bottom: 50px;
      header{
     // height: 233px;
