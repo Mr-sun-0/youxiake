@@ -29,7 +29,7 @@ export default {
       this.$router.go(-1);
     },
     quit() {
-      this.$router.push('/mine');
+      this.$router.push('/index');
       sessionStorage.clear();
     },
     update() {
