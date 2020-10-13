@@ -60,6 +60,7 @@ export default {
         })
         .then(() => {
           sessionStorage.setItem('token', this.$store.state.registerList.token);
+          sessionStorage.setItem('res', JSON.stringify(this.$store.state.registerList));
           if (this.$store.state.registerList.length !== 0) {
             this.$router.push('/community');
           }

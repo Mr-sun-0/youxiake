@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="banner-wrap">
      <van-swipe :autoplay="3000">
        <van-swipe-item v-for="(image, index) in BannerList" :key="index">
         <img v-lazy=image.url />
@@ -19,9 +19,16 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
-  img{
-    width: 355px;
-    height: 155px;
+<style lang="less">
+  .banner-wrap{
+    text-align: center;
+    height: 160px;
+    .van-swipe-item{
+      text-align: center;
+      img{
+          width: 90%;
+          height: 155px;
+        }
+    }
   }
 </style>

@@ -4,12 +4,15 @@
         <index-header />
         <index-nav />
         <index-banner />
+        <index-midnav />
       </header>
-      <index-midnav />
       <index-function />
       <index-recommend/>
       <index-action />
       <index-minority />
+      <index-destination />
+      <index-content />
+      <router-view />
     </div>
 </template>
 
@@ -22,6 +25,8 @@ import IndexFunction from '@/components/index/IndexFunction.vue';
 import IndexRecommend from '@/components/index/IndexRecommend.vue';
 import IndexAction from '@/components/index/IndexAction.vue';
 import IndexMinority from '@/components/index/IndexMinority.vue';
+import IndexDestination from '@/components/index/IndexDestination.vue';
+import IndexContent from '@/components/index/IndexContent.vue';
 
 export default {
   components: {
@@ -33,6 +38,8 @@ export default {
     IndexRecommend,
     IndexAction,
     IndexMinority,
+    IndexDestination,
+    IndexContent,
   },
   mounted() {
     this.$store.dispatch('getIndexData');
@@ -42,11 +49,10 @@ export default {
 
 <style lang="less" scoped>
   .index-wrap{
-    background:#ddd;
+    background:#f2f2f2;
     margin-bottom: 50px;
      header{
-    height: 233px;
-    background: linear-gradient(to bottom, #fedb39 90%,white 10%);
+    background: linear-gradient(to bottom, #fedb39 70%,white 30%);
   }
   }
 </style>

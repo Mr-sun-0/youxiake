@@ -19,6 +19,8 @@ import {
   List,
   ShareSheet,
   PullRefresh,
+  Popup,
+  Switch,
 
 } from 'vant';
 import Vue from 'vue';
@@ -33,6 +35,7 @@ import './assets/css/cities.css';// 解决杨师傅该问题
 import './assets/css/photography.css';// 解决样式覆盖问题
 
 Vue.config.productionTip = false;
+Vue.use(Switch);
 Vue.use(List);
 Vue.use(Button);
 Vue.use(Field);
@@ -53,6 +56,7 @@ Vue.use(Cell);
 Vue.use(CellGroup);
 Vue.use(ShareSheet);
 Vue.use(PullRefresh);
+Vue.use(Popup);
 
 new Vue({
   router,

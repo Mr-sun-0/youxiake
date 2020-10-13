@@ -4,8 +4,14 @@ import http from './http';
 export function getData() {
   return http.get('/api/index/part?sitecode=1&city_id=1&refreshCount=60');
 }
+
+export function getFlow(params) {
+  return http.get('/api/index/flowrecommend?sitecode=1&city_id=1&type=1&page=1', params);
+}
+
+// 我的页面接口
 export function getMineRecommend() {
-  return http.get('/api/lines/userrecommends');
+  return http.post('https://www.fastmock.site/mock/b4d7d83661a384a503ae466c316a0080/youxiake/mine/recommend');
 }
 // 城市列表接口
 // export function getCitiesList() {
