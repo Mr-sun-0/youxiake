@@ -66,7 +66,11 @@ const routes = [{
 {
   path: '/community',
   component: () => import('../views/community.vue'),
-  meta: { needLogin: true },
+  // meta: { needLogin: true },
+  children: [{
+    path: '/commfiv02',
+    component: () => import('../components/community/CommFiv/CommFiv02.vue'),
+  }],
 },
 {
   path: '/setting',

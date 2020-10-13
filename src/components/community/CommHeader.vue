@@ -1,12 +1,17 @@
 <template>
     <div class="cont">
         <div class="header-wrap">
-            <van-search
+            <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
+              <van-swipe-item v-for="(item,index) in imgUrl " :key="index">
+                <img :src="item.imgurl" alt="">
+                </van-swipe-item>
+            </van-swipe>
+        </div>
+        <van-search
             v-model="value"
             shape="round"
             background="none"
             />
-        </div>
         <section class="sec">
             <ul class="four-icon">
                  <li v-for="(item,index) in list" :key="index" @click="totarget(index)">
@@ -30,6 +35,14 @@ export default {
         { title: '摄影', imgurl: require('../../assets/images/community/sy-icon04.png') },
         { title: '视频', imgurl: require('../../assets/images/community/youji-icon02.png') },
       ],
+      imgUrl: [
+        { imgurl: require('../../assets/images/community/swiper2/12581602215103.jpg') },
+        { imgurl: require('../../assets/images/community/swiper2/20651592553841.jpg') },
+        { imgurl: require('../../assets/images/community/swiper2/29781597202658.jpg') },
+        { imgurl: require('../../assets/images/community/swiper2/41101586832070.jpg') },
+        { imgurl: require('../../assets/images/community/swiper2/69191592196104.jpg') },
+        { imgurl: require('../../assets/images/community/swiper2/79791589422766.jpg') },
+      ],
     };
   },
 
@@ -40,7 +53,7 @@ export default {
           this.$router.push('/index');
           break;
         case 1:
-          this.$router.push('/index');
+          this.$router.push('/community/commfiv02');
           break;
         default:
           break;
@@ -59,17 +72,42 @@ export default {
         justify-content:center;
         width: 100%;
         align-items: center;
-        background: #B4B4B4;
-        height: 226px;
-        van-search{
-            width: 99%;
-            height: 96px;
-            background: #FFFFFF;
-            border-radius: 48px;
-        }
+        height:190px;
+        // van-search{
+        //     width: 99%;
+        //     height: 96px;
+        //     background: #FFFFFF;
+        //     border-radius: 48px;
+        // }
+         .my-swipe .van-swipe-item {
+            width: 100%;
+            height:190px;
+            color: #fff;
+            font-size: 20px;
+            line-height: 190px;
+            text-align: center;
+            background-color: #39a9ed;
+           }
+           .van-swipe{
+              width: 100%;
+              height:190px;
+            img{
+              width: 100%;
+              height:190px;
+            }
+           }
         .van-cell{
             width: 320px;
         }
+    }
+    .van-search{
+      position:fixed;
+      top: 2px;
+      left: 14px;
+      width: 351px;
+      height: 34px;
+      padding: 0.26667rem 0.32rem;
+      z-index: 10;
     }
     .sec{
         width: 100%;
