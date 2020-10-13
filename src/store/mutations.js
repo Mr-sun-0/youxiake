@@ -12,6 +12,9 @@ const mutations = {
       state.registerList = payload.result;
     }
   },
+  getPhotography(state, payload) {
+    state.PhotographyList = payload;
+  },
 };
 
 export default mutations;

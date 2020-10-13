@@ -49,18 +49,18 @@ export default {
       view: ['热门景点', '附近景点'],
       isActive: 0,
       hotView: [
-        { imgUrl: '', nm: '西湖' },
-        { imgUrl: '', nm: '西湖' },
-        { imgUrl: '', nm: '西湖' },
-        { imgUrl: '', nm: '西湖' },
-        { imgUrl: '', nm: '西湖' },
+        { imgUrl: 'https://ns-strategy.cdn.bcebos.com/ns-strategy/upload/fc_big_pic/part-00664-3072.jpg', nm: '西湖' },
+        { imgUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3568226464,1178407779&fm=26&gp=0.jpg', nm: '动湖' },
+        { imgUrl: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1758750398,2289384092&fm=26&gp=0.jpg', nm: '南湖' },
+        { imgUrl: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1855262503,4247955691&fm=26&gp=0.jpg', nm: '众湖' },
+        { imgUrl: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1544840073,2889524921&fm=26&gp=0.jpg', nm: '北湖' },
       ],
       nearbyView: [
-        { imgUrl: '', nm: '附近景点' },
-        { imgUrl: '', nm: '附近景点' },
-        { imgUrl: '', nm: '附近景点' },
-        { imgUrl: '', nm: '附近景点' },
-        { imgUrl: '', nm: '附近景点' },
+        { imgUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3305433237,192006384&fm=26&gp=0.jpg', nm: '小狗狗' },
+        { imgUrl: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1134135092,4251053377&fm=26&gp=0.jpg', nm: '大狗狗' },
+        { imgUrl: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1164121158,4077695529&fm=26&gp=0.jpg', nm: '苏洒洒' },
+        { imgUrl: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2256508442,2098425710&fm=26&gp=0.jpg', nm: '付孔超' },
+        { imgUrl: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3554192377,3082995357&fm=26&gp=0.jpg', nm: '刘军' },
       ],
     };
   },
@@ -145,6 +145,7 @@ export default {
                     display: block;
                     border-radius: 3px;
                     background-color: lawngreen;
+                    border-radius: 6px;
                 }
                 p{
                     font-size: 16px;

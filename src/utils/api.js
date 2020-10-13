@@ -24,3 +24,7 @@ export function getCode(data) {
 export function login(data) {
   return http.post('http://www.pudge.wang:3001/register', data);
 }
+// 获取摄影页面图片
+export function getPhotography() {
+  return http.get('https://www.fastmock.site/mock/8e05dd6e01eeabe788f147aa3090d219/photo/getimg');
+}

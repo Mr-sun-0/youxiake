@@ -1,5 +1,7 @@
 import { Toast } from 'vant';
-import { getData, getCode, login } from '../utils/api';
+import {
+  getData, getCode, login, getPhotography,
+} from '../utils/api';
 
 const actions = {
   async getIndexData({ commit }) {
@@ -21,6 +23,11 @@ const actions = {
     console.log(res);
     Toast(res.msg);
     commit('login', res);
+  },
+  async getPhotography({ commit }) {
+    const res = await getPhotography();
+    console.log(res);
+    commit('getPhotography', res.data);
   },
 };
 
