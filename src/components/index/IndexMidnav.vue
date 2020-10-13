@@ -23,14 +23,14 @@ export default {
       justify-content: space-around;
       font-size: 12px;
       background: #fff;
-      padding: 20px 0;
+      padding: 5px 0;
       .section{
         display: flex;
         flex-direction: column;
           img{
             width:40px;
             height: 40px;
-            margin-bottom:5px ;
+            margin-bottom:10px ;
           }
       }
     }

@@ -22,9 +22,11 @@ export default {
 <style lang="less">
   .banner-wrap{
     text-align: center;
+    height: 160px;
     .van-swipe-item{
+      text-align: center;
       img{
-          width: 100%;
+          width: 90%;
           height: 155px;
         }
     }

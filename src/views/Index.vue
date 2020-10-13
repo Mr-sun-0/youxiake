@@ -49,10 +49,9 @@ export default {
 
 <style lang="less" scoped>
   .index-wrap{
-    background:#ddd;
+    background:#f2f2f2;
     margin-bottom: 50px;
      header{
-    // height: 233px;
     background: linear-gradient(to bottom, #fedb39 70%,white 30%);
   }
   }

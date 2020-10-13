@@ -19,14 +19,9 @@ export default {
   components: {
     MineHeader,
   },
-  mounted() {
-    this.getMineRecommend();
-  },
 
   methods: {
-    getMineRecommend() {
-      this.$store.dispatch('getMineRecommend');
-    },
+
     onRefresh() {
       setTimeout(() => {
         Toast('刷新成功');

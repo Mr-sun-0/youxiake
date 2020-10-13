@@ -5,7 +5,23 @@
             <img src="../../assets/images/community/block2/xkrl-icon.png" alt="">
         </div>
         <section>
-            <img src="../../assets/images/community/block2/qh-img.png" alt="">
+            <carousel-3d class="sw">
+                <slide :index="0" id="slide" style="width: 356px; height: 250px;">
+                    <img src="../../assets/images/community/newpic/1.png" alt="">
+                </slide>
+                <slide :index="1" id="slide" style="width: 356px; height: 250px;">
+                    <img src="../../assets/images/community/newpic/2.png" alt="">
+                </slide>
+                  <slide :index="2" id="slide" style="width: 356px; height: 250px;">
+                    <img src="../../assets/images/community/newpic/3.png" alt="">
+                </slide>
+                 <slide :index="3" id="slide" style="width: 356px; height: 250px;">
+                    <img src="../../assets/images/community/newpic/4.png" alt="">
+                </slide>
+                 <slide :index="4" id="slide" style="width: 356px; height: 250px;">
+                    <img src="../../assets/images/community/newpic/10.jpg" alt="">
+                </slide>
+            </carousel-3d>
         </section>
         <div class="wz_span">
             <span>疫情过去了，我们去旅行吧！（北方）</span>
@@ -29,8 +45,13 @@
     </div>
 </template>
 <script>
-export default {
+import { Carousel3d, Slide } from 'vue-carousel-3d';
 
+export default {
+  components: {
+    Carousel3d,
+    Slide,
+  },
 };
 </script>
 <style lang="less" scoped>
@@ -47,7 +68,7 @@ export default {
             font-style: italic;
             color: #333333;
             position: absolute;
-            top: 20px;
+            top: -20px;
             left: 126px;
              z-index: 3;
         }
@@ -55,18 +76,22 @@ export default {
             position: absolute;
             z-index: 2;
             width: 140px;
-            top: 38px;
+            top: 25px;
             left: 111px;
         }
     }
     section{
         position: relative;
-        img{
-            width: 90%;
-            height: 200px;
-            position: absolute;
-            left: 25px;
-            top: -10px;
+        height: 230px;
+        .sw {
+            width: 95%;
+            height: 80px;
+        #slide{
+            border: none;
+            border-radius: 5%;
+            box-shadow: 1px 2px 3px 10px black inset;
+            width: 200px;
+            }
         }
     }
     .wz_span{
@@ -76,7 +101,7 @@ export default {
             position: absolute;
             display: block;
             width: 350px;
-            top:204px;
+            top:50px;
             left: 30px;
             height: 60px;
             font-size: 18px;
@@ -87,13 +112,13 @@ export default {
     }
     .art{
         width: 100%;
-        height: 280px;
+        height: 100px;
         position: relative;
         .div1{
             width: 100%;
             height: 80px;
             position: absolute;
-            top: 230px;
+            top: 80px;
             display: flex;
             justify-content: center;
             align-items: center;

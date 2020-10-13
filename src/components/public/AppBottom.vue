@@ -1,16 +1,37 @@
 <template>
-    <div>
+    <div class="tabbar-wrap">
       <van-tabbar route active-color="orange" placeholder >
-        <van-tabbar-item replace to='/index' icon="@/assets/icon/public/icon01.png">首页
+        <van-tabbar-item replace to='/index' >
+        <img src="../../assets/icon/public/icon01.png">
+        <p>首页</p>
         </van-tabbar-item>
-        <van-tabbar-item replace to='/hangzhou' icon="@/assets/icon/public/icon02.png">杭州
+        <van-tabbar-item replace to='/hangzhou'>
+        <img src="../../assets/icon/public/icon02.png">
+        <p>杭州</p>
         </van-tabbar-item>
-        <van-tabbar-item replace to='/meet' icon="@/assets/icon/public/icon03.png">遇见
+        <van-tabbar-item replace to='/meet'>
+        <img src="../../assets/icon/public/icon03.png">
+        <p>遇见</p>
         </van-tabbar-item>
-        <van-tabbar-item replace to='/community' icon="@/assets/icon/public/icon04.png">社区
+        <van-tabbar-item replace to='/community'>
+        <img src="../../assets/icon/public/icon04.png">
+        <p>社区</p>
         </van-tabbar-item>
-        <van-tabbar-item replace to='/mine' icon="@/assets/icon/public/icon05.png">我的
+        <van-tabbar-item replace to='/mine'>
+        <img src="../../assets/icon/public/icon05.png">
+        <p>我的</p>
         </van-tabbar-item>
       </van-tabbar>
     </div>
 </template>
+
+<style lang="less" scoped>
+  .tabbar-wrap{
+    z-index: 9999;
+    // position: relative;
+    img{
+      width: 27px;
+      height: 27px;
+    }
+  }
+</style>

@@ -22,7 +22,7 @@
 
 <style lang="less" scoped>
     .minority-wrap{
-        margin-top: 10px;
+        margin-top: 5px;
         background: white;
         h3{
             span{

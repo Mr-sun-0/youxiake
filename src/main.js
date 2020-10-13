@@ -24,9 +24,11 @@ import {
 
 } from 'vant';
 import Vue from 'vue';
+import Carousel3d from 'vue-carousel-3d';
 import router from './router';
 import store from './store';
 import App from './App.vue';
+
 import 'amfe-flexible';
 
 // 引入reset文件
@@ -56,7 +58,7 @@ Vue.use(CellGroup);
 Vue.use(ShareSheet);
 Vue.use(PullRefresh);
 Vue.use(Popup);
-
+Vue.use(Carousel3d);
 new Vue({
   router,
   store,
